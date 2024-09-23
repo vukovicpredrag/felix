@@ -1,0 +1,14 @@
+# translations/EasyAdminBundle.en.yaml
+easy_admin:
+  entity:
+    Product: 'Proizvod'
+  new:
+    page_title: 'Kreiraj novi proizvod'
+  edit:
+    page_title: 'Edituj proizvod'
+  detail:
+    page_title: 'Detalji o proizvodu'
+  action:
+    new: 'Dodaj novi proizvod'
+    edit: 'Edituj proizvod'
+    delete: 'Obrisi prozivod'
