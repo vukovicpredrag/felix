@@ -11,6 +11,9 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -113,6 +116,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="2lWDnsfnV9ydkhGSFbTJgjPBJw1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -153,11 +157,23 @@
       <workItem from="1725717298181" duration="11787000" />
       <workItem from="1725870364525" duration="624000" />
       <workItem from="1726210134373" duration="23713000" />
-      <workItem from="1727116047334" duration="1505000" />
+      <workItem from="1727116047334" duration="4572000" />
+      <workItem from="1727206877766" duration="306000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
