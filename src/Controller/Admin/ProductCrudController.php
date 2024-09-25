@@ -139,6 +139,39 @@ class ProductCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false)->hideOnIndex(),
 
+            ImageField::new('image5', 'Slika 5')
+                ->setBasePath('media/')
+                ->setUploadDir('public/media')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false)->hideOnIndex(),
+            ImageField::new('image6', 'Slika 6')
+                ->setBasePath('media/')
+                ->setUploadDir('public/media')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false)->hideOnIndex(),
+            ImageField::new('image7', 'Slika 7')
+                ->setBasePath('media/')
+                ->setUploadDir('public/media')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false)->hideOnIndex(),
+            ImageField::new('image8', 'Slika 8')
+                ->setBasePath('media/')
+                ->setUploadDir('public/media')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false)->hideOnIndex(),
+            ImageField::new('image9', 'Slika 9')
+                ->setBasePath('media/')
+                ->setUploadDir('public/media')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false)->hideOnIndex(),
+            ImageField::new('image10', 'Slika 10')
+                ->setBasePath('media/')
+                ->setUploadDir('public/media')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false)->hideOnIndex(),
+
+
+
             ArrayField::new('keywords', 'Ključne reči')->hideOnIndex(),
 
         ];
