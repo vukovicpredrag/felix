@@ -8,3 +8,7 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+###> media files ###
+/public/media/
+!/public/media/.gitignore
+###> media files ###
