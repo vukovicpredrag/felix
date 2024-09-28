@@ -46,6 +46,12 @@ class Contact
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $mapSectionTitle = null;
 
+    #[ORM\Column(length: 1000, nullable: true)]
+    private ?string $HowCanWeHelp = null;
+
+    #[ORM\Column(length: 1000, nullable: true)]
+    private ?string $directionsToUs = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -167,6 +173,30 @@ class Contact
     public function setMapSectionTitle(?string $mapSectionTitle): static
     {
         $this->mapSectionTitle = $mapSectionTitle;
+
+        return $this;
+    }
+
+    public function getHowCanWeHelp(): ?string
+    {
+        return $this->HowCanWeHelp;
+    }
+
+    public function setHowCanWeHelp(?string $HowCanWeHelp): static
+    {
+        $this->HowCanWeHelp = $HowCanWeHelp;
+
+        return $this;
+    }
+
+    public function getDirectionsToUs(): ?string
+    {
+        return $this->directionsToUs;
+    }
+
+    public function setDirectionsToUs(?string $directionsToUs): static
+    {
+        $this->directionsToUs = $directionsToUs;
 
         return $this;
     }

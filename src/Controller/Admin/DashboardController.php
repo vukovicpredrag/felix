@@ -11,8 +11,11 @@ use App\Entity\CategorySection;
 use App\Entity\Contact;
 use App\Entity\Footer;
 use App\Entity\HeroSection;
+use App\Entity\HeroSectionAboutUs;
+use App\Entity\HeroSectionHome;
 use App\Entity\HomePage;
 use App\Entity\IntroSection;
+use App\Entity\MeetHanna;
 use App\Entity\Product;
 use App\Entity\SaleSection;
 use App\Entity\TabsSectionIntro;
@@ -59,8 +62,9 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
+        yield MenuItem::section('Proizvodi');
         yield MenuItem::linkToCrud('Proizvodi', 'fa-solid fa-chair', Product::class);
-        yield MenuItem::linkToCrud('Hero Sekcija', 'fa-solid fa-star', HeroSection::class);
+        yield MenuItem::linkToCrud('Hero Sekcija Proizvodi', 'fa-solid fa-star', HeroSection::class);
 
 
         yield MenuItem::section('POČETNA STRANICA');
@@ -77,13 +81,16 @@ class DashboardController extends AbstractDashboardController
 
             ]);
 
-        yield MenuItem::linkToCrud('Proja', 'fa-solid fa-tag', SaleSection::class);
+        yield MenuItem::linkToCrud('Prdaja', 'fa-solid fa-tag', SaleSection::class);
+        yield MenuItem::linkToCrud('Upoznaj Hanu', 'fa-solid fa-h', MeetHanna::class);
+        yield MenuItem::linkToCrud('Hero Sekcija Početna', 'fa-solid fa-star', HeroSectionHome::class);
 
-        yield MenuItem::linkToCrud('Upoznaj Hanu', 'fa-solid fa-h', HeroSection::class);
 
         yield MenuItem::section('O nama');
         yield MenuItem::linkToCrud('Uvod', 'fa-solid fa-info', IntroSection::class);
         yield MenuItem::linkToCrud('Ipod Uvoda', 'fa-solid fa-info', BelowIntro::class);
+        yield MenuItem::linkToCrud('Hero Sekcija O nama', 'fa-solid fa-star', HeroSectionAboutUs::class);
+
 
         yield MenuItem::section('Kontakt');
         yield MenuItem::linkToCrud('Kontakt', 'fa-solid fa-address-book', Contact::class);

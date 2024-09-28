@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
@@ -60,14 +61,28 @@ class ContactCrudController extends AbstractCrudController
         // ->setEntityLabelInSingular('Kategorije linkovi')
         //->setEntityLabelInPlural('Kategorije link');
     }
-    /*
+
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            TextField::new('mainTitlePreText', 'Naslov prije Teksta'),
+            TextField::new('mainTitle', 'Glavni Naslov'),
+            TextEditorField::new('paragraph', 'Paragraf'),
+            TextField::new('phone', 'Telefon'),
+            TextField::new('email', 'Email'),
+            TextField::new('location', 'Lokacija'),
+            TextField::new('mapLink', 'Link za Mapu'),
+            TextareaField::new('mapHtmlEmbed', 'HTML Embed za Mapu'),
+            TextField::new('mapSectionPreText', 'Prije Teksta za Sekciju Mape'),
+            TextField::new('mapSectionTitle', 'Naslov Sekcije Mape'),
+            TextEditorField::new('HowCanWeHelp', 'Kako Vam Možemo Pomoći'),
+            TextField::new('directionsToUs', 'Direkcije do nas'),
+
+
+
+
+
         ];
     }
-    */
+
 }

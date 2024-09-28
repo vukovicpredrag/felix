@@ -95,30 +95,46 @@ class ProductCrudController extends AbstractCrudController
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false),
+                ->setRequired(false)
+                ->setHelp('Preporučen je png format slike zbog automatske optimizacije'),
             ChoiceField::new('category', 'Kategorija')
                 ->setChoices($categoryChoices) // Set the dynamically fetched categories as choices
                 ->renderExpanded(false) // Render as a dropdown (false for select, true for radio buttons)
                 ->allowMultipleChoices(false),
 
-            TextareaField::new('shortDescription', 'Kratak opis'),
-            TextareaField::new('mainDescription', 'Glavni opis')->hideOnIndex(),
+            TextEditorField::new('shortDescription', 'Kratak opis'),
+            TextEditorField::new('mainDescription', 'Glavni opis')->hideOnIndex(),
             TextField::new('slug'),
-            TextField::new('ribbonIndicator', 'Indikator trake')->hideOnIndex(),
+            TextField::new('ribbonIndicator', 'Indikator trake (new - Novo, sale - Rasprodaja)')->hideOnIndex(),
             TextField::new('ribbonIndicatorText', 'Tekst indikatora trake')->hideOnIndex(),
             IntegerField::new('mainPrice', 'Glavna cena'),
-            IntegerField::new('discoutedPrice', 'Cena sa popustom')->hideOnIndex(),
+            IntegerField::new('discoutedPrice', 'Cijena sa popustom')->hideOnIndex(),
+
+
+            ImageField::new('singeProductTermsBox1Icon', 'Ikona Prve stavke uslova')
+                ->setBasePath('media/')
+                ->setUploadDir('public/media')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false)->hideOnIndex(),
             TextEditorField::new('singeProductTermsBox1Text1', 'Tekst prve stavke uslova 1')->hideOnIndex(),
             TextEditorField::new('singeProductTermsBox1Text2', 'Tekst prve stavke uslova 2')->hideOnIndex(),
-            TextField::new('singeProductTermsBox2Icon', 'Ikona druge stavke uslova')->hideOnIndex(),
+            ImageField::new('singeProductTermsBox2Icon', 'Ikona druge stavke uslova')
+                ->setBasePath('media/')
+                ->setUploadDir('public/media')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false)->hideOnIndex(),
             TextEditorField::new('singeProductTermsBox2Text1', 'Tekst druge stavke uslova 1')->hideOnIndex(),
             TextEditorField::new('singeProductTermsBox2Text2', 'Tekst druge stavke uslova 2')->hideOnIndex(),
-            TextField::new('singeProductTermsBox3Icon', 'Ikona treće stavke uslova')->hideOnIndex(),
+            ImageField::new('singeProductTermsBox3Icon', 'Ikona treće stavke uslova')
+                ->setBasePath('media/')
+                ->setUploadDir('public/media')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false)->hideOnIndex(),
             TextEditorField::new('singeProductTermsBox3Text1', 'Tekst treće stavke uslova 1')->hideOnIndex(),
             TextEditorField::new('singeProductTermsBox3Text2', 'Tekst treće stavke uslova 2')->hideOnIndex(),
-            TextareaField::new('singleProductAvailabilityText', 'Tekst o dostupnosti proizvoda')->hideOnIndex(),
+            TextEditorField::new('singleProductAvailabilityText', 'Tekst o dostupnosti proizvoda')->hideOnIndex(),
 
-            ImageField::new('image1', 'Slika 1')
+            ImageField::new('image1', 'Slika 1 (Za slike je preporučen png format slike zbog automatske optimizacije)')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
@@ -171,8 +187,12 @@ class ProductCrudController extends AbstractCrudController
                 ->setRequired(false)->hideOnIndex(),
 
 
+            TextField::new('learnMoreText', 'Saznaj više tekst'),
+            TextField::new('learnMoreLink', 'Saznaj više link'),
 
-            ArrayField::new('keywords', 'Ključne reči')->hideOnIndex(),
+            ArrayField::new('keywords', 'Ključne reči')->hideOnIndex()->setHelp('Preporučivo da se popuni zbog SEO optimizacije'),
+            TextField::new('metaDescription', 'Meta Description')->hideOnIndex()->setHelp('Preporučivo da se popuni zbog SEO optimizacije'),
+
 
         ];
     }

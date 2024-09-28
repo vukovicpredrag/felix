@@ -33,6 +33,7 @@ final class MediaObjectNormalizer implements ContextAwareNormalizerInterface, No
      */
     public function supportsNormalization($data, ?string $format = null, array $context = []): bool
     {
+
         if (isset($context[self::ALREADY_CALLED])) {
             return false;
         }

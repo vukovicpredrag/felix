@@ -67,13 +67,13 @@ class TabsSectionTabsDataCrudController extends AbstractCrudController
     {
         return [
             // IdField::new('id'),
-            TextField::new('label', 'Oznaka'),
-            ImageField::new('image', 'Slika')
+            TextField::new('label', 'Naslov taba'),
+            ImageField::new('image', 'Slika (slika za desktop)')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false),
-            ImageField::new('slideImage', 'Slika slajda')
+            ImageField::new('slideImage', 'Slika slajda (slika za mobitel)')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')

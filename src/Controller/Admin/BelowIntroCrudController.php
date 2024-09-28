@@ -63,7 +63,6 @@ class BelowIntroCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id', 'ID'),
             TextField::new('label', 'Label'),
             TextField::new('title', 'Title'),
             TextEditorField::new('text', 'Text'),

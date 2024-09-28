@@ -67,7 +67,7 @@ class HeroSectionCrudController extends AbstractCrudController
         return [
             TextField::new('mainTitlePreText', 'Prethodni tekst glavnog naslova'),
             TextField::new('mainTitle', 'Glavni naslov'),
-            TextareaField::new('paragraph', 'Paragraf'),
+            TextEditorField::new('paragraph', 'Paragraf'),
 
             TextField::new('cta1Link', 'Prvi CTA link'),
             TextField::new('cta1Title', 'Naslov prvog CTA'),
@@ -81,7 +81,8 @@ class HeroSectionCrudController extends AbstractCrudController
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false),
+                ->setRequired(false)
+                ->setHelp('Preporučen je png format slike zbog automatske optimizacije'),
         ];
     }
 

@@ -2,15 +2,29 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
+use App\Entity\Traits\TimestampableEntity;
 use App\Repository\ProductRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ApiResource]
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
+#[ORM\HasLifecycleCallbacks]
+//#[ApiFilter(OrderFilter::class,
+//    properties: ['createdAt'],
+//    arguments: ['orderParameterName' => 'order']
+//)]
+#[ApiFilter(SearchFilter::class,
+    properties: ['category' => 'exact', 'ribbonIndicator' => 'exact'])
+]
 class Product
 {
+    use TimestampableEntity;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -109,21 +123,28 @@ class Product
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image10 = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $metaDescription = null;
+
+    #[ORM\Column(length: 1000, nullable: true)]
+    private ?string $learnMoreText = null;
+
+    #[ORM\Column(length: 500, nullable: true)]
+    private ?string $learnMoreLink = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getMainDescription (): ?string
+    public function getMainDescription(): ?string
     {
-        return $this->mainDescription ;
+        return $this->mainDescription;
     }
 
     public function setMainDescription(?string $mainDescription): static
     {
         $this->mainDescription = $mainDescription;
-
         return $this;
     }
 
@@ -132,10 +153,9 @@ class Product
         return $this->mainImage;
     }
 
-    public function setMainImage(string $mainImage): static
+    public function setMainImage(?string $mainImage): static
     {
         $this->mainImage = $mainImage;
-
         return $this;
     }
 
@@ -147,7 +167,6 @@ class Product
     public function setKeywords(?array $keywords): static
     {
         $this->keywords = $keywords;
-
         return $this;
     }
 
@@ -159,7 +178,6 @@ class Product
     public function setSlug(?string $slug): static
     {
         $this->slug = $slug;
-
         return $this;
     }
 
@@ -171,7 +189,6 @@ class Product
     public function setRibbonIndicator(?string $ribbonIndicator): static
     {
         $this->ribbonIndicator = $ribbonIndicator;
-
         return $this;
     }
 
@@ -183,7 +200,6 @@ class Product
     public function setRibbonIndicatorText(?string $ribbonIndicatorText): static
     {
         $this->ribbonIndicatorText = $ribbonIndicatorText;
-
         return $this;
     }
 
@@ -195,7 +211,6 @@ class Product
     public function setMainPrice(?string $mainPrice): static
     {
         $this->mainPrice = $mainPrice;
-
         return $this;
     }
 
@@ -207,7 +222,6 @@ class Product
     public function setDiscoutedPrice(?string $discoutedPrice): static
     {
         $this->discoutedPrice = $discoutedPrice;
-
         return $this;
     }
 
@@ -219,7 +233,6 @@ class Product
     public function setSingeProductTermsBox1Icon(?string $singeProductTermsBox1Icon): static
     {
         $this->singeProductTermsBox1Icon = $singeProductTermsBox1Icon;
-
         return $this;
     }
 
@@ -231,7 +244,6 @@ class Product
     public function setSingeProductTermsBox1Text1(?string $singeProductTermsBox1Text1): static
     {
         $this->singeProductTermsBox1Text1 = $singeProductTermsBox1Text1;
-
         return $this;
     }
 
@@ -243,7 +255,6 @@ class Product
     public function setSingeProductTermsBox1Text2(?string $singeProductTermsBox1Text2): static
     {
         $this->singeProductTermsBox1Text2 = $singeProductTermsBox1Text2;
-
         return $this;
     }
 
@@ -255,7 +266,6 @@ class Product
     public function setSingeProductTermsBox2Icon(?string $singeProductTermsBox2Icon): static
     {
         $this->singeProductTermsBox2Icon = $singeProductTermsBox2Icon;
-
         return $this;
     }
 
@@ -267,7 +277,6 @@ class Product
     public function setShortDescription(?string $shortDescription): static
     {
         $this->shortDescription = $shortDescription;
-
         return $this;
     }
 
@@ -279,7 +288,6 @@ class Product
     public function setSingeProductTermsBox2Text1(?string $singeProductTermsBox2Text1): static
     {
         $this->singeProductTermsBox2Text1 = $singeProductTermsBox2Text1;
-
         return $this;
     }
 
@@ -291,7 +299,6 @@ class Product
     public function setSingeProductTermsBox2Text2(?string $singeProductTermsBox2Text2): static
     {
         $this->singeProductTermsBox2Text2 = $singeProductTermsBox2Text2;
-
         return $this;
     }
 
@@ -303,7 +310,6 @@ class Product
     public function setSingeProductTermsBox3Icon(?string $singeProductTermsBox3Icon): static
     {
         $this->singeProductTermsBox3Icon = $singeProductTermsBox3Icon;
-
         return $this;
     }
 
@@ -315,7 +321,6 @@ class Product
     public function setSingeProductTermsBox3Text1(?string $singeProductTermsBox3Text1): static
     {
         $this->singeProductTermsBox3Text1 = $singeProductTermsBox3Text1;
-
         return $this;
     }
 
@@ -327,7 +332,6 @@ class Product
     public function setSingeProductTermsBox3Text2(?string $singeProductTermsBox3Text2): static
     {
         $this->singeProductTermsBox3Text2 = $singeProductTermsBox3Text2;
-
         return $this;
     }
 
@@ -339,7 +343,6 @@ class Product
     public function setSingleProductAvailabilityText(?string $singleProductAvailabilityText): static
     {
         $this->singleProductAvailabilityText = $singleProductAvailabilityText;
-
         return $this;
     }
 
@@ -351,7 +354,6 @@ class Product
     public function setImage1(?string $image1): static
     {
         $this->image1 = $image1;
-
         return $this;
     }
 
@@ -363,7 +365,6 @@ class Product
     public function setImage2(?string $image2): static
     {
         $this->image2 = $image2;
-
         return $this;
     }
 
@@ -375,7 +376,6 @@ class Product
     public function setImage3(?string $image3): static
     {
         $this->image3 = $image3;
-
         return $this;
     }
 
@@ -387,33 +387,6 @@ class Product
     public function setImage4(?string $image4): static
     {
         $this->image4 = $image4;
-
-        return $this;
-    }
-
-
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(?string $title): static
-    {
-        $this->title = $title;
-
-        return $this;
-    }
-
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?string $category): static
-    {
-        $this->category = $category;
-
         return $this;
     }
 
@@ -425,7 +398,6 @@ class Product
     public function setImage5(?string $image5): static
     {
         $this->image5 = $image5;
-
         return $this;
     }
 
@@ -437,7 +409,6 @@ class Product
     public function setImage6(?string $image6): static
     {
         $this->image6 = $image6;
-
         return $this;
     }
 
@@ -449,7 +420,6 @@ class Product
     public function setImage7(?string $image7): static
     {
         $this->image7 = $image7;
-
         return $this;
     }
 
@@ -461,7 +431,6 @@ class Product
     public function setImage8(?string $image8): static
     {
         $this->image8 = $image8;
-
         return $this;
     }
 
@@ -473,7 +442,6 @@ class Product
     public function setImage9(?string $image9): static
     {
         $this->image9 = $image9;
-
         return $this;
     }
 
@@ -485,9 +453,61 @@ class Product
     public function setImage10(?string $image10): static
     {
         $this->image10 = $image10;
-
         return $this;
     }
 
+    public function getMetaDescription(): ?string
+    {
+        return $this->metaDescription;
+    }
 
+    public function setMetaDescription(?string $metaDescription): static
+    {
+        $this->metaDescription = $metaDescription;
+        return $this;
+    }
+
+    public function getLearnMoreText(): ?string
+    {
+        return $this->learnMoreText;
+    }
+
+    public function setLearnMoreText(?string $learnMoreText): static
+    {
+        $this->learnMoreText = $learnMoreText;
+        return $this;
+    }
+
+    public function getLearnMoreLink(): ?string
+    {
+        return $this->learnMoreLink;
+    }
+
+    public function setLearnMoreLink(?string $learnMoreLink): static
+    {
+        $this->learnMoreLink = $learnMoreLink;
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(?string $title): static
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?string $category): static
+    {
+        $this->category = $category;
+        return $this;
+    }
 }
