@@ -2,25 +2,26 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\BelowIntro;
+use App\Entity\Blog;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class BelowIntroCrudController extends AbstractCrudController
+class BlogCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return BelowIntro::class;
+        return Blog::class;
     }
 
     public function configureActions(Actions $actions): Actions
     {
-        // Primeni prilagođene oznake na akcije na više stranica
         return $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL) // Add DETAIL action to the index page
             ->update(Crud::PAGE_INDEX, Action::NEW, function (Action $action) {
@@ -52,20 +53,27 @@ class BelowIntroCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle(Crud::PAGE_INDEX, 'Pregled')
-            ->setPageTitle(Crud::PAGE_NEW, 'Kreiraj')
-            ->setPageTitle(Crud::PAGE_EDIT, 'Edituj')
-            ->setPageTitle(Crud::PAGE_DETAIL, 'Detalji');
-
+            ->setPageTitle(Crud::PAGE_INDEX, 'Pregled Blogova')
+            ->setPageTitle(Crud::PAGE_NEW, 'Kreiraj Blog')
+            ->setPageTitle(Crud::PAGE_EDIT, 'Edituj Blog')
+            ->setPageTitle(Crud::PAGE_DETAIL, 'Detalji Bloga');
     }
 
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('label', 'Label'),
-            TextField::new('title', 'Title'),
-            TextEditorField::new('text', 'Text'),
+            TextField::new('preH1Text', 'Naslov prije H1'),
+            TextField::new('blogTitle', 'Naslov Bloga'),
+            TextField::new('slug', 'Slug'),
+            TextField::new('category', 'Kategorija'),
+            ImageField::new('featuredImage', 'Istaknuta slika')
+                ->setBasePath('media/')
+                ->setUploadDir('public/media')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false)
+                ->setHelp('Preporučen je png format slike zbog automatske optimizacije'),
+            TextareaField::new('featuredImageDescription', 'Opis Istaknute Slike'),
+            TextEditorField::new('blogIntroParagraph', 'Uvodni Paragraf'),
         ];
     }
-
 }

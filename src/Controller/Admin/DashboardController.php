@@ -5,6 +5,8 @@ namespace App\Controller\Admin;
 use App\Entity\About;
 use App\Entity\Article;
 use App\Entity\BelowIntro;
+use App\Entity\Blog;
+use App\Entity\BlogSections;
 use App\Entity\Categories;
 use App\Entity\CategoryLink;
 use App\Entity\CategorySection;
@@ -16,6 +18,7 @@ use App\Entity\HeroSectionHome;
 use App\Entity\HomePage;
 use App\Entity\IntroSection;
 use App\Entity\MeetHanna;
+use App\Entity\Newsletter;
 use App\Entity\Product;
 use App\Entity\SaleSection;
 use App\Entity\TabsSectionIntro;
@@ -101,14 +104,13 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Produkt kategorije');
         yield MenuItem::linkToCrud('Kategorije', 'fa-solid fa-note-sticky', Categories::class);
 
-//        yield MenuItem::section('Accordion and Category');
-//        MenuItem::linkToCrud('Category Sections', 'fa-solid fa-list', CategorySection::class);
-//        MenuItem::linkToCrud('Category Links', 'fa-solid fa-list', CategoryLink::class);
-//        yield MenuItem::linkToCrud('Users', 'fas fa-users', User::class);
-//        yield MenuItem::linkToCrud('Home Page', 'fa-solid fa-house', HomePage::class);
-//        yield MenuItem::linkToCrud('About', 'fa-solid fa-address-card', About::class);
-//        yield MenuItem::linkToCrud('Article', 'fa-regular fa-newspaper', Article::class);
-//        yield MenuItem::linkToCrud('Contact', 'fa-regular fa-address-book', Contact::class);
+        yield MenuItem::section('Newsletter');
+        yield MenuItem::linkToCrud('Newsletter', 'fa-solid fa-envelope', Newsletter::class);
+
+        yield MenuItem::section('Blog');
+        yield MenuItem::linkToCrud('Blog', 'fa-solid fa-newspaper', Blog::class);
+        yield MenuItem::linkToCrud('Blog Sekcije', 'fa-regular fa-newspaper', BlogSections::class);
+
 
     }
 }

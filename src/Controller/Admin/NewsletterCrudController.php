@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\BelowIntro;
+use App\Entity\Newsletter;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -11,12 +11,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class BelowIntroCrudController extends AbstractCrudController
+class NewsletterCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return BelowIntro::class;
+        return Newsletter::class;
     }
+
 
     public function configureActions(Actions $actions): Actions
     {
@@ -33,39 +34,30 @@ class BelowIntroCrudController extends AbstractCrudController
                 return $action->setLabel('Prikaži'); // Change label for DETAIL action
             })
             ->update(Crud::PAGE_DETAIL, Action::EDIT, function (Action $action) {
-                return $action->setLabel('Edituj');
+                return $action->setLabel('Edituj proizvod'); // Prilagođena oznaka za dugme "Izmeni" na stranici detalja
             })
             ->update(Crud::PAGE_EDIT, Action::SAVE_AND_CONTINUE, function (Action $action) {
-                return $action->setLabel('Sačuvaj i nastavi uređivanje');
+                return $action->setLabel('Sačuvaj i nastavi uređivanje'); // Prilagođena oznaka za "Sačuvaj i nastavi"
             })
             ->update(Crud::PAGE_EDIT, Action::SAVE_AND_RETURN, function (Action $action) {
-                return $action->setLabel('Sačuvaj i vrati se');
+                return $action->setLabel('Sačuvaj i vrati se'); // Prilagođena oznaka za "Sačuvaj i vrati se"
             })
             ->update(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER, function (Action $action) {
-                return $action->setLabel('Sačuvaj i dodaj');
+                return $action->setLabel('Sačuvaj i dodaj novi'); // Prilagođena oznaka za "Sačuvaj i dodaj novi" na stranici za dodavanje
             })
             ->update(Crud::PAGE_NEW, Action::SAVE_AND_RETURN, function (Action $action) {
-                return $action->setLabel('Sačuvaj i vrati se');
+                return $action->setLabel('Sačuvaj i vrati se'); // Prilagođena oznaka za "Sačuvaj i vrati se" na stranici za dodavanje
             });
     }
 
-    public function configureCrud(Crud $crud): Crud
-    {
-        return $crud
-            ->setPageTitle(Crud::PAGE_INDEX, 'Pregled')
-            ->setPageTitle(Crud::PAGE_NEW, 'Kreiraj')
-            ->setPageTitle(Crud::PAGE_EDIT, 'Edituj')
-            ->setPageTitle(Crud::PAGE_DETAIL, 'Detalji');
-
-    }
-
+    /*
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('label', 'Label'),
-            TextField::new('title', 'Title'),
-            TextEditorField::new('text', 'Text'),
+            IdField::new('id'),
+            TextField::new('title'),
+            TextEditorField::new('description'),
         ];
     }
-
+    */
 }

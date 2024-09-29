@@ -12,6 +12,8 @@ use App\Entity\IntroSection;
 use App\Entity\MeetHanna;
 use App\Entity\SaleSection;
 use App\Entity\TabsSectionTabsData;
+use App\Entity\Blog;
+use App\Entity\BlogSections;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
@@ -32,8 +34,7 @@ class ProductImagePathNormalizer implements NormalizerInterface
         if ($object instanceof Product) {
             $imageFields = [
                 'mainImage', 'singeProductTermsBox1Icon',
-                'singeProductTermsBox2Icon',
-                'singeProductTermsBox3Icon',
+                'singeProductTermsBox2Icon', 'singeProductTermsBox3Icon',
                 'image1', 'image2', 'image3', 'image4',
                 'image5', 'image6', 'image7', 'image8',
                 'image9', 'image10'
@@ -57,10 +58,8 @@ class ProductImagePathNormalizer implements NormalizerInterface
         // Normalizing Footer entity icons
         if ($object instanceof Footer) {
             $iconFields = [
-                'footerBox1Icon',
-                'footerBox2Icon',
-                'footerBox3Icon',
-                'footerBox4Icon',
+                'footerBox1Icon', 'footerBox2Icon',
+                'footerBox3Icon', 'footerBox4Icon',
             ];
 
             foreach ($iconFields as $iconField) {
@@ -72,21 +71,7 @@ class ProductImagePathNormalizer implements NormalizerInterface
         }
 
         // Normalizing HeroSection entity background image
-        if ($object instanceof HeroSection) {
-            if ($object->getBackgroundImage() !== null) {
-                $data['backgroundImage'] = $baseUrl . $object->getBackgroundImage();
-            }
-        }
-
-        // Normalizing HeroSectionAboutUs entity background image
-        if ($object instanceof HeroSectionAboutUs) {
-            if ($object->getBackgroundImage() !== null) {
-                $data['backgroundImage'] = $baseUrl . $object->getBackgroundImage();
-            }
-        }
-
-        // Normalizing HeroSectionHome entity background image
-        if ($object instanceof HeroSectionHome) {
+        if ($object instanceof HeroSection || $object instanceof HeroSectionAboutUs || $object instanceof HeroSectionHome) {
             if ($object->getBackgroundImage() !== null) {
                 $data['backgroundImage'] = $baseUrl . $object->getBackgroundImage();
             }
@@ -133,6 +118,20 @@ class ProductImagePathNormalizer implements NormalizerInterface
             }
         }
 
+        // Normalizing Blog entity images
+        if ($object instanceof Blog) {
+            if ($object->getFeaturedImage() !== null) {
+                $data['featuredImage'] = $baseUrl . $object->getFeaturedImage();
+            }
+        }
+
+        // Normalizing BlogSections entity images
+        if ($object instanceof BlogSections) {
+            if ($object->getBlogSectionImg() !== null) {
+                $data['blogSectionImg'] = $baseUrl . $object->getBlogSectionImg();
+            }
+        }
+
         return $data;
     }
 
@@ -147,7 +146,9 @@ class ProductImagePathNormalizer implements NormalizerInterface
             || $data instanceof IntroSection
             || $data instanceof MeetHanna
             || $data instanceof SaleSection
-            || $data instanceof TabsSectionTabsData;
+            || $data instanceof TabsSectionTabsData
+            || $data instanceof Blog
+            || $data instanceof BlogSections;
     }
 
     public function getSupportedTypes(?string $format): array
@@ -163,6 +164,8 @@ class ProductImagePathNormalizer implements NormalizerInterface
             MeetHanna::class => true,
             SaleSection::class => true,
             TabsSectionTabsData::class => true,
+            Blog::class => true,
+            BlogSections::class => true,
         ];
     }
 }
