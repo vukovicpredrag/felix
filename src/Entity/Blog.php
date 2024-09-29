@@ -8,41 +8,54 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: BlogRepository::class)]
-#[ApiResource]
+#[ApiResource(
+    normalizationContext: ['groups' => ['blog:read']],
+    denormalizationContext: ['groups' => ['blog:write']]
+)]
 class Blog
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['blog:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 1000, nullable: true)]
+    #[Groups(['blog:read', 'blog:write'])]
     private ?string $preH1Text = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['blog:read', 'blog:write'])]
     private ?string $blogTitle = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['blog:read', 'blog:write'])]
     private ?string $slug = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['blog:read', 'blog:write'])]
     private ?string $category = null;
 
     #[ORM\Column(length: 500, nullable: true)]
+    #[Groups(['blog:read', 'blog:write'])]
     private ?string $featuredImage = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['blog:read', 'blog:write'])]
     private ?string $featuredImageDescription = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['blog:read', 'blog:write'])]
     private ?string $blogIntroParagraph = null;
 
     /**
      * @var Collection<int, BlogSections>
      */
     #[ORM\OneToMany(targetEntity: BlogSections::class, mappedBy: 'blog')]
+    #[Groups(['blog:read'])]
     private Collection $blogSections;
 
     public function __construct()

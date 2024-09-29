@@ -6,6 +6,7 @@ use ApiPlatform\Metadata\ApiResource;
 use App\Repository\BlogSectionsRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: BlogSectionsRepository::class)]
 #[ApiResource]
@@ -17,33 +18,43 @@ class BlogSections
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['blog:read'])]
     private ?string $sectionTitle = null;
 
     #[ORM\Column(length: 1000, nullable: true)]
+    #[Groups(['blog:read'])]
     private ?string $firstParagraph = null;
 
     #[ORM\Column(length: 500, nullable: true)]
+    #[Groups(['blog:read'])]
     private ?string $blogSectionImg = null;
 
     #[ORM\Column(length: 1000, nullable: true)]
+    #[Groups(['blog:read'])]
     private ?string $blogSectionImgDescription = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['blog:read'])]
     private ?string $secondParagraph = null;
 
     #[ORM\Column(length: 500, nullable: true)]
+    #[Groups(['blog:read'])]
     private ?string $ctaSectionTitle = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['blog:read'])]
     private ?string $ctaBtnLink = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['blog:read'])]
     private ?string $ctaBtnTitle = null;
 
     #[ORM\Column(length: 5000, nullable: true)]
+    #[Groups(['blog:read'])]
     private ?string $quoteSectionText = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['blog:read'])]
     private ?string $thirdParagraph = null;
 
     #[ORM\ManyToOne(inversedBy: 'blogSections')]

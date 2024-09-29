@@ -80,8 +80,10 @@ class BlogSectionsCrudController extends AbstractCrudController
             AssociationField::new('blog', 'Blog')
                 ->setRequired(true)
                 ->setHelp('Izaberite blog kojem pripada ova sekcija')
-                ->autocomplete() // Enables autocomplete to easily find the related Blog
-
+                ->autocomplete()
+                ->setCustomOption('autocomplete_item_label', function (Blog $blog) {
+                    return $blog->getBlogTitle(); // Replace 'getBlogTitle()' with the actual method to get the title
+                })
         ];
     }
 }
