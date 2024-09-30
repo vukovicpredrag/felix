@@ -17,6 +17,12 @@ use Symfony\Component\Serializer\Annotation\Groups;
 )]
 class Blog
 {
+
+    public function __toString(): string
+    {
+        return $this->getBlogTitle(); // Adjust this to use your blog title getter
+    }
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
