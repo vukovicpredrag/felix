@@ -40,12 +40,20 @@ class ProductImagePathNormalizer implements NormalizerInterface
                 'image9', 'image10'
             ];
 
+            $images = [];
+
             foreach ($imageFields as $imageField) {
                 $getter = 'get' . ucfirst($imageField);
                 if (method_exists($object, $getter) && $object->$getter() !== null) {
                     $data[$imageField] = $baseUrl . $object->$getter();
+
+                    if($imageField != 'mainImage' && $imageField != 'singeProductTermsBox1Icon' && $imageField != 'singeProductTermsBox2Icon' && $imageField != 'singeProductTermsBox3Icon' ) {
+                        $images[]['src:'] = $data[$imageField];
+                    }
                 }
             }
+            $data['images'] = $images;
+
         }
 
         // Normalizing CategoryLink entity image

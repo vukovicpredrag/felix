@@ -54,7 +54,7 @@ class CategoryLinkCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle(Crud::PAGE_INDEX, 'Pregled')
+            ->setPageTitle(Crud::PAGE_INDEX, 'Pregled (Preporuceno da bude 3)')
             ->setPageTitle(Crud::PAGE_NEW, 'Kreiraj')
             ->setPageTitle(Crud::PAGE_EDIT, 'Edituj')
             ->setPageTitle(Crud::PAGE_DETAIL, 'Detalji');
