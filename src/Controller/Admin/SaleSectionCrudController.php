@@ -67,7 +67,7 @@ class SaleSectionCrudController extends AbstractCrudController
         return [
             //  IdField::new('id'),
             TextField::new('saleSectionTitle', 'Naslov sekcije rasprodaje'),
-            TextareaField::new('saleSectionParagraph', 'Paragraf sekcije rasprodaje'),
+            TextEditorField::new('saleSectionParagraph', 'Paragraf sekcije rasprodaje'),
             TextField::new('saleSectionLink', 'Link sekcije rasprodaje'),
             TextField::new('saleSectionLinkTitle', 'Naslov linka sekcije rasprodaje'),
 

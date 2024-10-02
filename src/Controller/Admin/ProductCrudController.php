@@ -86,7 +86,7 @@ class ProductCrudController extends AbstractCrudController
         // Create an array of choices with 'name' as the display value and 'id' as the value
         $categoryChoices = [];
         foreach ($categories as $category) {
-            $categoryChoices[$category->getName()] = $category->getId();
+            $categoryChoices[$category->getName()] = $category->getName();
         }
 
         return [

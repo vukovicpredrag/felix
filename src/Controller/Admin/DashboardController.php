@@ -84,7 +84,7 @@ class DashboardController extends AbstractDashboardController
 
             ]);
 
-        yield MenuItem::linkToCrud('Prdaja', 'fa-solid fa-tag', SaleSection::class);
+        yield MenuItem::linkToCrud('Rasprodaja', 'fa-solid fa-tag', SaleSection::class);
         yield MenuItem::linkToCrud('Upoznaj Hanu', 'fa-solid fa-h', MeetHanna::class);
         yield MenuItem::linkToCrud('Hero Sekcija Početna', 'fa-solid fa-star', HeroSectionHome::class);
 
