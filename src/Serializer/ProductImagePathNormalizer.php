@@ -48,7 +48,7 @@ class ProductImagePathNormalizer implements NormalizerInterface
                     $data[$imageField] = $baseUrl . $object->$getter();
 
                     if($imageField != 'mainImage' && $imageField != 'singeProductTermsBox1Icon' && $imageField != 'singeProductTermsBox2Icon' && $imageField != 'singeProductTermsBox3Icon' ) {
-                        $images[]['src:'] = $data[$imageField];
+                        $images[]['src'] = $data[$imageField];
                     }
                 }
             }
