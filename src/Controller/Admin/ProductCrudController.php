@@ -186,10 +186,6 @@ class ProductCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false)->hideOnIndex(),
 
-
-            TextField::new('learnMoreText', 'Saznaj više tekst'),
-            TextField::new('learnMoreLink', 'Saznaj više link'),
-
             ArrayField::new('keywords', 'Ključne reči')->hideOnIndex()->setHelp('Preporučivo da se popuni zbog SEO optimizacije'),
             TextField::new('metaDescription', 'Meta Description')->hideOnIndex()->setHelp('Preporučivo da se popuni zbog SEO optimizacije'),
 

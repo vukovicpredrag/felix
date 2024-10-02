@@ -69,11 +69,11 @@ class HeroSectionCrudController extends AbstractCrudController
             TextField::new('mainTitle', 'Glavni naslov'),
             TextEditorField::new('paragraph', 'Paragraf'),
 
-            TextField::new('cta1Link', 'Prvi CTA link'),
-            TextField::new('cta1Title', 'Naslov prvog CTA'),
+            TextField::new('cta1Link', 'Prvi CTA link')->setHelp('Ostavite prazno polje za naziv dugme ako ne zelite da se dugme prikaze '),
+            TextField::new('cta1Title', 'Naslov prvog CTA')->setHelp('Ostavite prazno polje za naziv dugme ako ne zelite da se dugme prikaze '),
 
-            TextField::new('cta2Link', 'Drugi CTA link'),
-            TextField::new('cta2LinkText', 'Tekst drugog CTA linka'),
+            TextField::new('cta2Link', 'Drugi CTA link')->setHelp('Ostavite prazno polje za naziv dugme ako ne zelite da se dugme prikaze '),
+            TextField::new('cta2LinkText', 'Tekst drugog CTA linka')->setHelp('Ostavite prazno polje za naziv dugme ako ne zelite da se dugme prikaze '),
 
             TextField::new('type', 'Tip'),
 
