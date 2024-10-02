@@ -74,7 +74,7 @@ class IntroSection
 
     public function getImage1Src(): ?string
     {
-        return $this->getImage1Src;
+        return $this->image1Src;
     }
 
     public function setImage1Src(?string $image1Src): static
@@ -86,7 +86,7 @@ class IntroSection
 
     public function getImage2Src(): ?string
     {
-        return $this->getImage2Src;
+        return $this->image2Src;
     }
 
     public function setImage2Src(?string $image2Src): static
