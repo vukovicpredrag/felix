@@ -14,12 +14,14 @@ use Doctrine\ORM\Mapping as ORM;
 #[ApiResource]
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 #[ORM\HasLifecycleCallbacks]
-//#[ApiFilter(OrderFilter::class,
-//    properties: ['createdAt'],
-//    arguments: ['orderParameterName' => 'order']
-//)]
+
 #[ApiFilter(SearchFilter::class,
-    properties: ['category' => 'exact', 'ribbonIndicator' => 'exact'])
+    properties: [
+        'category' => 'exact',
+        'ribbonIndicator' => 'exact',
+        'bestSeller' => 'exact',
+        'highlightedProduct' => 'exact'
+    ])
 ]
 #[ApiFilter(OrderFilter::class,
     properties: ['createdAt'],
@@ -135,6 +137,12 @@ class Product
 
     #[ORM\Column(length: 500, nullable: true)]
     private ?string $learnMoreLink = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $bestSeller = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $highlightedProduct = null;
 
     public function getId(): ?int
     {
@@ -512,6 +520,30 @@ class Product
     public function setCategory(?string $category): static
     {
         $this->category = $category;
+        return $this;
+    }
+
+    public function getBestSeller(): ?int
+    {
+        return $this->bestSeller;
+    }
+
+    public function setBestSeller(?int $bestSeller): static
+    {
+        $this->bestSeller = $bestSeller;
+
+        return $this;
+    }
+
+    public function getHighlightedProduct(): ?int
+    {
+        return $this->highlightedProduct;
+    }
+
+    public function setHighlightedProduct(?int $highlightedProduct): static
+    {
+        $this->highlightedProduct = $highlightedProduct;
+
         return $this;
     }
 }
