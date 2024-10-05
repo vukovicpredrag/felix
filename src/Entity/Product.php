@@ -21,6 +21,10 @@ use Doctrine\ORM\Mapping as ORM;
 #[ApiFilter(SearchFilter::class,
     properties: ['category' => 'exact', 'ribbonIndicator' => 'exact'])
 ]
+#[ApiFilter(OrderFilter::class,
+    properties: ['createdAt'],
+    arguments: ['orderParameterName' => 'order']
+)]
 class Product
 {
     use TimestampableEntity;

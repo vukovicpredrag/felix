@@ -2,7 +2,10 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
+use App\Entity\Traits\TimestampableEntity;
 use App\Repository\BlogRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -15,8 +18,13 @@ use Symfony\Component\Serializer\Annotation\Groups;
     normalizationContext: ['groups' => ['blog:read']],
     denormalizationContext: ['groups' => ['blog:write']]
 )]
+#[ApiFilter(OrderFilter::class,
+    properties: ['createdAt'],
+    arguments: ['orderParameterName' => 'order']
+)]
 class Blog
 {
+    use TimestampableEntity;
 
     public function __toString(): string
     {
@@ -106,7 +114,6 @@ class Blog
     public function setSlug(?string $slug): static
     {
         $this->slug = $slug;
-
         return $this;
     }
 
@@ -118,7 +125,6 @@ class Blog
     public function setCategory(?string $category): static
     {
         $this->category = $category;
-
         return $this;
     }
 
@@ -154,7 +160,6 @@ class Blog
     public function setBlogIntroParagraph(?string $blogIntroParagraph): static
     {
         $this->blogIntroParagraph = $blogIntroParagraph;
-
         return $this;
     }
 

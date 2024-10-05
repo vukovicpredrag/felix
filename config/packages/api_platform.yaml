@@ -1,14 +1,21 @@
 api_platform:
     title: Hello API Platform
     version: 1.0.0
+    swagger:
+        api_keys:
+            JWT:
+                name: X-Auth-Token
+                type: header
+        swagger_ui_extra_configuration:
+            persistAuthorization: true
     formats:
         jsonld: [ 'application/ld+json' ]
         json: [ 'application/json' ]
         form: [ 'multipart/form-data' ] # Add this line to support form data
     docs_formats:
-        jsonld: ['application/ld+json']
-        jsonopenapi: ['application/vnd.openapi+json']
-        html: ['text/html']
+        jsonld: [ 'application/ld+json' ]
+        jsonopenapi: [ 'application/vnd.openapi+json' ]
+        html: [ 'text/html' ]
     defaults:
         stateless: true
         cache_headers:
@@ -16,5 +23,10 @@ api_platform:
         extra_properties:
             standard_put: true
             rfc_7807_compliant_errors: true
+        pagination_client_items_per_page: true
+        pagination_items_per_page: 16 # Default value
+    collection:
+        pagination:
+            items_per_page_parameter_name: itemsPerPage
+    event_listeners_backward_compatibility_layer: false
     keep_legacy_inflector: false
-    use_symfony_listeners: true

@@ -8,8 +8,11 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: BelowIntroRepository::class)]
-#[ApiResource]
-class BelowIntro
+#[ApiResource(
+    paginationEnabled: true,               // Enable pagination for this resource
+    paginationItemsPerPage: 20,            // Default items per page for this resource
+    paginationMaximumItemsPerPage: 50      // Maximum items per page for this resource
+)]class BelowIntro
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
