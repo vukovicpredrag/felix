@@ -61,19 +61,21 @@ class SEOCrudController extends AbstractCrudController
             ->update(Crud::PAGE_EDIT, Action::SAVE_AND_RETURN, function (Action $action) {
                 return $action->setLabel('Sačuvaj i vrati se'); // Prilagođena oznaka za "Sačuvaj i vrati se"
             })
-            ->update(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER, function (Action $action) {
-                return $action->setLabel('Sačuvaj i dodaj novi'); // Prilagođena oznaka za "Sačuvaj i dodaj novi" na stranici za dodavanje
-            })
+//            ->update(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER, function (Action $action) {
+//                return $action->setLabel('Sačuvaj i dodaj novi'); // Prilagođena oznaka za "Sačuvaj i dodaj novi" na stranici za dodavanje
+//            })
             ->update(Crud::PAGE_NEW, Action::SAVE_AND_RETURN, function (Action $action) {
                 return $action->setLabel('Sačuvaj i vrati se'); // Prilagođena oznaka za "Sačuvaj i vrati se" na stranici za dodavanje
-            });
+            })
+            ->disable(Action::NEW) // This will hide the "Add New" button
+            ;
     }
 
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
             ->setPageTitle(Crud::PAGE_INDEX, 'Lista ')
-            ->setPageTitle(Crud::PAGE_NEW, 'Kreiraj') // Prilagođena oznaka za "Dodaj proizvod" dugme
+            //->setPageTitle(Crud::PAGE_NEW, 'Kreiraj') // Prilagođena oznaka za "Dodaj proizvod" dugme
             ->setPageTitle(Crud::PAGE_EDIT, 'Edituj ')
             ->setPageTitle(Crud::PAGE_DETAIL, 'Detalji');
     }
