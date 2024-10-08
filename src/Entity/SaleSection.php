@@ -40,7 +40,7 @@ class SaleSection
     private ?string $image4 = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $hide = null;
+    private ?bool $hide = false;
 
     public function getId(): ?int
     {
@@ -143,12 +143,12 @@ class SaleSection
         return $this;
     }
 
-    public function getHide(): ?int
+    public function getHide(): ?bool
     {
         return $this->hide;
     }
 
-    public function setHide(?int $hide): static
+    public function setHide(?bool $hide): static
     {
         $this->hide = $hide;
 
