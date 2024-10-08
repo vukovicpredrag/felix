@@ -23,10 +23,8 @@ use Doctrine\ORM\Mapping as ORM;
         'highlightedProduct' => 'exact'
     ])
 ]
-#[ApiFilter(OrderFilter::class,
-    properties: ['createdAt'],
-    arguments: ['orderParameterName' => 'order']
-)]
+#[ApiFilter(OrderFilter::class, properties: ['createdAt'], arguments: ['orderParameterName' => 'order'])]
+#[ApiFilter(OrderFilter::class, properties: ['title'], arguments: ['orderParameterName' => 'order'])]
 
 class Product
 {
