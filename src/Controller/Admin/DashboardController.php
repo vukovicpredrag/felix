@@ -6,6 +6,7 @@ use App\Entity\About;
 use App\Entity\Article;
 use App\Entity\BelowIntro;
 use App\Entity\Blog;
+use App\Entity\BlogOverview;
 use App\Entity\BlogSections;
 use App\Entity\Categories;
 use App\Entity\CategoryLink;
@@ -16,11 +17,16 @@ use App\Entity\HeroSection;
 use App\Entity\HeroSectionAboutUs;
 use App\Entity\HeroSectionHome;
 use App\Entity\HomePage;
+use App\Entity\HomePageSlider;
+use App\Entity\InsuranceBox;
 use App\Entity\IntroSection;
 use App\Entity\MeetHanna;
 use App\Entity\Newsletter;
+use App\Entity\OurGoalsData;
 use App\Entity\Product;
+use App\Entity\Promotions;
 use App\Entity\SaleSection;
+use App\Entity\SEO;
 use App\Entity\TabsSectionIntro;
 use App\Entity\TabsSectionTabsData;
 use App\Entity\TabsSectionText;
@@ -68,7 +74,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Proizvodi');
         yield MenuItem::linkToCrud('Proizvodi', 'fa-solid fa-chair', Product::class);
         yield MenuItem::linkToCrud('Hero Sekcija Proizvodi', 'fa-solid fa-star', HeroSection::class);
-
+        yield MenuItem::linkToCrud('Slajderi', 'fa-solid fa-star', HomePageSlider::class);
+        yield MenuItem::linkToCrud('Garancije', 'fa-solid fa-star',InsuranceBox::class);
 
         yield MenuItem::section('POČETNA STRANICA');
         yield MenuItem::subMenu('Kategorija', 'fa-solid fa-layer-group')
@@ -91,7 +98,8 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('O nama');
         yield MenuItem::linkToCrud('Uvod', 'fa-solid fa-info', IntroSection::class);
-        yield MenuItem::linkToCrud('Ipod Uvoda', 'fa-solid fa-info', BelowIntro::class);
+        yield MenuItem::linkToCrud('Naši ciljevi naslov', 'fa-solid fa-info', OurGoalsData::class);
+        yield MenuItem::linkToCrud('Naši ciljevi podaci', 'fa-solid fa-info', BelowIntro::class);
         yield MenuItem::linkToCrud('Hero Sekcija O nama', 'fa-solid fa-star', HeroSectionAboutUs::class);
 
 
@@ -108,9 +116,16 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Newsletter', 'fa-solid fa-envelope', Newsletter::class);
 
         yield MenuItem::section('Blog');
+        yield MenuItem::linkToCrud('Blog Pregled', 'fa-solid fa-newspaper', BlogOverview::class);
         yield MenuItem::linkToCrud('Blog', 'fa-solid fa-newspaper', Blog::class);
         yield MenuItem::linkToCrud('Blog Sekcije', 'fa-regular fa-newspaper', BlogSections::class);
 
+
+        yield MenuItem::section('SEO');
+        yield MenuItem::linkToCrud('SEO podaci', 'fa-solid fa-chart-simple', SEO::class);
+
+        yield MenuItem::section('Promocije');
+        yield MenuItem::linkToCrud('Promocije', 'fa-solid fa-info', Promotions::class);
 
     }
 }

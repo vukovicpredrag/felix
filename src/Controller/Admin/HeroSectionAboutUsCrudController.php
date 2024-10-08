@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
@@ -75,7 +76,7 @@ class HeroSectionAboutUsCrudController extends AbstractCrudController
             TextField::new('cta2Link', 'Drugi CTA link')->setHelp('Ostavite prazno polje za naziv dugme ako ne zelite da se dugme prikaze '),
             TextField::new('cta2LinkText', 'Tekst drugog CTA linka')->setHelp('Ostavite prazno polje za naziv dugme ako ne zelite da se dugme prikaze '),
 
-            TextField::new('type', 'Tip'),
+            BooleanField::new('type', 'Tip')->setHelp('Ukoliko je checkirano, dva dugmeta iznad ce biti prikazana na stranici'),
 
             ImageField::new('backgroundImage', 'Pozadinska slika')
                 ->setBasePath('media/')

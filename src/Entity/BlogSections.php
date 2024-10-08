@@ -60,6 +60,9 @@ class BlogSections
     #[ORM\ManyToOne(inversedBy: 'blogSections')]
     private ?Blog $blog = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $weight = null;
+
 
 
     public function getId(): ?int
@@ -195,6 +198,18 @@ class BlogSections
     public function setBlog(?Blog $blog): static
     {
         $this->blog = $blog;
+
+        return $this;
+    }
+
+    public function getWeight(): ?int
+    {
+        return $this->weight;
+    }
+
+    public function setWeight(?int $weight): static
+    {
+        $this->weight = $weight;
 
         return $this;
     }

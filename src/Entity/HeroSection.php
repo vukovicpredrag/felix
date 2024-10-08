@@ -38,7 +38,7 @@ class HeroSection
     private ?string $cta2LinkText = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $type = null;
+    private ?int $type = null;
 
     #[ORM\Column(length: 1000, nullable: true)]
     private ?string $backgroundImage = null;
@@ -132,12 +132,12 @@ class HeroSection
         return $this;
     }
 
-    public function getType(): ?string
+    public function getType(): ?int
     {
         return $this->type;
     }
 
-    public function setType(?string $type): static
+    public function setType(?int $type): static
     {
         $this->type = $type;
 

@@ -39,6 +39,9 @@ class SaleSection
     #[ORM\Column(length: 500, nullable: true)]
     private ?string $image4 = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $hide = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -136,6 +139,18 @@ class SaleSection
     public function setImage4(?string $image4): static
     {
         $this->image4 = $image4;
+
+        return $this;
+    }
+
+    public function getHide(): ?int
+    {
+        return $this->hide;
+    }
+
+    public function setHide(?int $hide): static
+    {
+        $this->hide = $hide;
 
         return $this;
     }

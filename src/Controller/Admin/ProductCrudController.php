@@ -112,29 +112,29 @@ class ProductCrudController extends AbstractCrudController
             IntegerField::new('mainPrice', 'Glavna cena'),
             IntegerField::new('discoutedPrice', 'Cijena sa popustom')->hideOnIndex(),
 
-
-            ImageField::new('singeProductTermsBox1Icon', 'Ikona Prve stavke uslova')
-                ->setBasePath('media/')
-                ->setUploadDir('public/media')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false)->hideOnIndex(),
-            TextEditorField::new('singeProductTermsBox1Text1', 'Tekst prve stavke uslova 1')->hideOnIndex(),
-            TextEditorField::new('singeProductTermsBox1Text2', 'Tekst prve stavke uslova 2')->hideOnIndex(),
-            ImageField::new('singeProductTermsBox2Icon', 'Ikona druge stavke uslova')
-                ->setBasePath('media/')
-                ->setUploadDir('public/media')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false)->hideOnIndex(),
-            TextEditorField::new('singeProductTermsBox2Text1', 'Tekst druge stavke uslova 1')->hideOnIndex(),
-            TextEditorField::new('singeProductTermsBox2Text2', 'Tekst druge stavke uslova 2')->hideOnIndex(),
-            ImageField::new('singeProductTermsBox3Icon', 'Ikona treće stavke uslova')
-                ->setBasePath('media/')
-                ->setUploadDir('public/media')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false)->hideOnIndex(),
-            TextEditorField::new('singeProductTermsBox3Text1', 'Tekst treće stavke uslova 1')->hideOnIndex(),
-            TextEditorField::new('singeProductTermsBox3Text2', 'Tekst treće stavke uslova 2')->hideOnIndex(),
-            TextEditorField::new('singleProductAvailabilityText', 'Tekst o dostupnosti proizvoda')->hideOnIndex(),
+//
+//            ImageField::new('singeProductTermsBox1Icon', 'Ikona Prve stavke uslova')
+//                ->setBasePath('media/')
+//                ->setUploadDir('public/media')
+//                ->setUploadedFileNamePattern('[randomhash].[extension]')
+//                ->setRequired(false)->hideOnIndex(),
+//            TextEditorField::new('singeProductTermsBox1Text1', 'Tekst prve stavke uslova 1')->hideOnIndex(),
+//            TextEditorField::new('singeProductTermsBox1Text2', 'Tekst prve stavke uslova 2')->hideOnIndex(),
+//            ImageField::new('singeProductTermsBox2Icon', 'Ikona druge stavke uslova')
+//                ->setBasePath('media/')
+//                ->setUploadDir('public/media')
+//                ->setUploadedFileNamePattern('[randomhash].[extension]')
+//                ->setRequired(false)->hideOnIndex(),
+//            TextEditorField::new('singeProductTermsBox2Text1', 'Tekst druge stavke uslova 1')->hideOnIndex(),
+//            TextEditorField::new('singeProductTermsBox2Text2', 'Tekst druge stavke uslova 2')->hideOnIndex(),
+//            ImageField::new('singeProductTermsBox3Icon', 'Ikona treće stavke uslova')
+//                ->setBasePath('media/')
+//                ->setUploadDir('public/media')
+//                ->setUploadedFileNamePattern('[randomhash].[extension]')
+//                ->setRequired(false)->hideOnIndex(),
+//            TextEditorField::new('singeProductTermsBox3Text1', 'Tekst treće stavke uslova 1')->hideOnIndex(),
+//            TextEditorField::new('singeProductTermsBox3Text2', 'Tekst treće stavke uslova 2')->hideOnIndex(),
+//            TextEditorField::new('singleProductAvailabilityText', 'Tekst o dostupnosti proizvoda')->hideOnIndex(),
 
             ImageField::new('image1', 'Slika 1 (Za slike je preporučen png format slike zbog automatske optimizacije)')
                 ->setBasePath('media/')

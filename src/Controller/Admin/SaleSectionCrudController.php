@@ -7,6 +7,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
@@ -66,6 +68,7 @@ class SaleSectionCrudController extends AbstractCrudController
     {
         return [
             //  IdField::new('id'),
+            BooleanField::new('hide', 'Sakrij rasprodaju'),
             TextField::new('saleSectionTitle', 'Naslov sekcije rasprodaje'),
             TextEditorField::new('saleSectionParagraph', 'Paragraf sekcije rasprodaje'),
             TextField::new('saleSectionLink', 'Link sekcije rasprodaje'),

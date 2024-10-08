@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
@@ -63,7 +64,7 @@ class BlogSectionsCrudController extends AbstractCrudController
     {
         return [
             TextField::new('sectionTitle', 'Naslov Sekcije'),
-            TextareaField::new('firstParagraph', 'Prvi Paragraf'),
+            TextEditorField::new('firstParagraph', 'Prvi Paragraf'),
             ImageField::new('blogSectionImg', 'Slika Sekcije')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
@@ -83,7 +84,9 @@ class BlogSectionsCrudController extends AbstractCrudController
                 ->autocomplete()
                 ->setCustomOption('autocomplete_item_label', function (Blog $blog) {
                     return $blog->getBlogTitle(); // Replace 'getBlogTitle()' with the actual method to get the title
-                })
+                }),
+            IntegerField::new('weight', 'Važnost')->setHelp('Manji broj prikazan na vrhu')
         ];
+
     }
 }

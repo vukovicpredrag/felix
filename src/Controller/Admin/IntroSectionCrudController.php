@@ -69,7 +69,7 @@ class IntroSectionCrudController extends AbstractCrudController
             //  IdField::new('id'),
             TextField::new('h2Text', 'H2 Tekst'),
             TextField::new('subH2Text', 'Podnaslov H2 Teksta'),
-            TextareaField::new('paragraphs', 'Paragrafi'),
+            TextEditorField::new('paragraphs', 'Paragrafi'),
             ImageField::new('image1Src', 'Prva slika')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')

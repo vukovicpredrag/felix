@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
 use App\Entity\Traits\TimestampableEntity;
@@ -22,6 +23,11 @@ use Symfony\Component\Serializer\Annotation\Groups;
     properties: ['createdAt'],
     arguments: ['orderParameterName' => 'order']
 )]
+#[ApiFilter(SearchFilter::class,
+    properties: [
+        'category' => 'exact',
+    ])
+]
 class Blog
 {
     use TimestampableEntity;

@@ -82,8 +82,7 @@ class MeetHannaCrudController extends AbstractCrudController
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false),
-            TextareaField::new('meetHannaParagraph1'),
-            TextareaField::new('meetHannaParagraph2'),
+            TextEditorField::new('meetHannaParagraph1'),
             TextField::new('meetHannaCtaTitle'),
             TextField::new('meetHannaCtaLink'),
 
