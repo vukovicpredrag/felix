@@ -68,7 +68,7 @@ class HeroSectionHomeCrudController extends AbstractCrudController
         return [
             TextField::new('mainTitlePreText', 'Prethodni tekst glavnog naslova'),
             TextField::new('mainTitle', 'Glavni naslov'),
-            TextareaField::new('paragraph', 'Paragraf'),
+            TextEditorField::new('paragraph', 'Paragraf'),
 
             TextField::new('cta1Link', 'Prvi CTA link')->setHelp('Ostavite prazno polje za naziv dugme ako ne zelite da se dugme prikaze '),
             TextField::new('cta1Title', 'Naslov prvog CTA')->setHelp('Ostavite prazno polje za naziv dugme ako ne zelite da se dugme prikaze '),
