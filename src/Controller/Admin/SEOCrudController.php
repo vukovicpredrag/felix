@@ -98,7 +98,7 @@ class SEOCrudController extends AbstractCrudController
             TextField::new('page', 'Stranica'),
 
             TextField::new('title', 'Naslov'),
-            TextareaField::new('description', 'Opis'),
+        //    TextareaField::new('description', 'Opis'),
 
 
             ArrayField::new('keywords', 'Ključne reči')->hideOnIndex()->setHelp('Preporučivo da se popuni zbog SEO optimizacije'),
