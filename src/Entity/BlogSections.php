@@ -61,6 +61,7 @@ class BlogSections
     private ?Blog $blog = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups(['blog:read'])]
     private ?int $weight = null;
 
 
