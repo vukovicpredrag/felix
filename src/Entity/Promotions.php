@@ -17,7 +17,7 @@ class Promotions
     private ?int $id = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $hide = null;
+    private ?bool $hide = false;
 
     #[ORM\Column(length: 1000, nullable: true)]
     private ?string $text = null;
@@ -27,12 +27,12 @@ class Promotions
         return $this->id;
     }
 
-    public function getHide(): ?string
+    public function getHide(): ?bool
     {
         return $this->hide;
     }
 
-    public function setHide(?string $hide): static
+    public function setHide(?bool $hide): static
     {
         $this->hide = $hide;
 
