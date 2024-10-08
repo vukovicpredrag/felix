@@ -27,7 +27,7 @@ class SEO
     #[ORM\Column(nullable: true)]
     private ?array $keywords = null;
 
-    #[ORM\Column(length: 1000)]
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $metaDescription = null;
 
     public function getId(): ?int
