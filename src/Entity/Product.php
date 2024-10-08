@@ -27,6 +27,7 @@ use Doctrine\ORM\Mapping as ORM;
     properties: ['createdAt'],
     arguments: ['orderParameterName' => 'order']
 )]
+
 class Product
 {
     use TimestampableEntity;
