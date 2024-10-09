@@ -87,13 +87,26 @@ class InsuranceBoxCrudController extends AbstractCrudController
 
 
         return [
-            ImageField::new('icon', 'Ikona Prve stavke uslova')
+            ImageField::new('icon', 'Ikona Prve stavke ')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false)->hideOnIndex(),
-            TextEditorField::new('text1', 'Tekst prve stavke uslova 1')->hideOnIndex(),
-            TextEditorField::new('text2', 'Tekst prve stavke uslova 2')->hideOnIndex(),
+            TextEditorField::new('text1', 'Tekst prve stavke')->hideOnIndex(),
+
+            ImageField::new('icon2', 'Ikona druge stavke ')
+                ->setBasePath('media/')
+                ->setUploadDir('public/media')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false)->hideOnIndex(),
+            TextEditorField::new('text2', 'Tekst druge stavke ')->hideOnIndex(),
+
+            ImageField::new('icon3', 'Ikona trece stavke')
+                ->setBasePath('media/')
+                ->setUploadDir('public/media')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false)->hideOnIndex(),
+            TextEditorField::new('text3', 'Tekst trece stavke')->hideOnIndex(),
 
         ];
     }

@@ -2,6 +2,7 @@
 
 namespace App\Serializer;
 
+use App\Entity\InsuranceBox;
 use App\Entity\Product;
 use App\Entity\CategoryLink;
 use App\Entity\Footer;
@@ -102,6 +103,18 @@ class ProductImagePathNormalizer implements NormalizerInterface
             }
             if ($object->getMeetHannaImage2() !== null) {
                 $data['meetHannaImage2'] = $baseUrl . $object->getMeetHannaImage2();
+            }
+        }
+
+        if ($object instanceof InsuranceBox) {
+            if ($object->getIcon() !== null) {
+                $data['icon'] = $baseUrl . $object->getIcon();
+            }
+            if ($object->getIcon2() !== null) {
+                $data['icon2'] = $baseUrl . $object->getIcon2();
+            }
+            if ($object->getIcon3() !== null) {
+                $data['icon3'] = $baseUrl . $object->getIcon3();
             }
         }
 

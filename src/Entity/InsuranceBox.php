@@ -22,7 +22,18 @@ class InsuranceBox
     private ?string $text1 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    private ?string $icon2 = null;
+
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $text2 = null;
+
+    #[ORM\Column(length: 500, nullable: true)]
+    private ?string $icon3 = null;
+
+    #[ORM\Column(length: 1000, nullable: true)]
+    private ?string $text3 = null;
+
+
 
     public function getId(): ?int
     {
@@ -53,6 +64,18 @@ class InsuranceBox
         return $this;
     }
 
+    public function getIcon2(): ?string
+    {
+        return $this->icon2;
+    }
+
+    public function setIcon2(?string $icon2): static
+    {
+        $this->icon2 = $icon2;
+
+        return $this;
+    }
+
     public function getText2(): ?string
     {
         return $this->text2;
@@ -64,4 +87,30 @@ class InsuranceBox
 
         return $this;
     }
+
+    public function getIcon3(): ?string
+    {
+        return $this->icon3;
+    }
+
+    public function setIcon3(?string $icon3): static
+    {
+        $this->icon3 = $icon3;
+
+        return $this;
+    }
+
+    public function getText3(): ?string
+    {
+        return $this->text3;
+    }
+
+    public function setText3(?string $text3): static
+    {
+        $this->text3 = $text3;
+
+        return $this;
+    }
+
+
 }
