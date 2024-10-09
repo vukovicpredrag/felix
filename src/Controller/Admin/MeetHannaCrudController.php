@@ -64,29 +64,24 @@ class MeetHannaCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-        //    IdField::new('id'),
-            TextField::new('meetHannaSectionTitle'),
-            TextField::new('meetHannaSectionSubtitle'),
-            ImageField::new('meetHannaImage1')
-                ->setBasePath('media/')
-                ->setUploadDir('public/media')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false),
-            ImageField::new('meetHannaImage1')
-                ->setBasePath('media/')
-                ->setUploadDir('public/media')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false),
-            ImageField::new('meetHannaImage2')
-                ->setBasePath('media/')
-                ->setUploadDir('public/media')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false),
-            TextEditorField::new('meetHannaParagraph1'),
-            TextField::new('meetHannaCtaTitle'),
-            TextField::new('meetHannaCtaLink'),
-
+            //    IdField::new('id'), // Id polje (komentar)
+            TextField::new('meetHannaSectionTitle', 'Upoznaj Hannu naslov'), // Naslov sekcije "Upoznaj Hannu"
+            TextField::new('meetHannaSectionSubtitle', 'Upoznaj Hannu podnaslov'), // Podnaslov sekcije "Upoznaj Hannu"
+            ImageField::new('meetHannaImage1', 'Prva slika') // Prva slika sekcije "Upoznaj Hannu"
+            ->setBasePath('media/') // Osnovna putanja za slike
+            ->setUploadDir('public/media') // Putanja za upload slika
+            ->setUploadedFileNamePattern('[randomhash].[extension]') // Obrazac za ime uploadovane datoteke
+            ->setRequired(false), // Nije obavezno
+            ImageField::new('meetHannaImage2', 'Druga slika') // Druga slika sekcije "Upoznaj Hannu"
+            ->setBasePath('media/') // Osnovna putanja za slike
+            ->setUploadDir('public/media') // Putanja za upload slika
+            ->setUploadedFileNamePattern('[randomhash].[extension]') // Obrazac za ime uploadovane datoteke
+            ->setRequired(false), // Nije obavezno
+            TextEditorField::new('meetHannaParagraph1', 'Paragraf o Hanni'), // Paragraf sekcije "Upoznaj Hannu"
+            TextField::new('meetHannaCtaTitle', 'Naslov za poziv na akciju'), // Naslov za poziv na akciju (CTA)
+            TextField::new('meetHannaCtaLink', 'Link za poziv na akciju'), // Link za poziv na akciju (CTA)
         ];
+
     }
 
 }
