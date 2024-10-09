@@ -40,22 +40,22 @@ class ContactEmailListener
         try {
             // Create the email
             $email = (new Email())
-                ->from('predrag.vukovic@etondigtal.com') // Sender's email
-                ->to('vukovicpredrag90@gmail.com') // Recipient's email
-                ->subject('New Contact Us Submission')
+                ->from('info@admin.hannachairs.com') // Sender's email
+                ->to($contactUs->getEmail()) // Recipient's email
+                ->subject('Hanna Chairs Kontakt')
                 ->text(sprintf(
-                    "You have a new contact form submission:\n\nName: %s\nEmail: %s\nSubject: %s\nMessage: %s",
+                    "Imate novu poruku:\n\nName: %s\nEmail: %s\nSubject: %s\nMessage: %s",
                     $contactUs->getName(),
                     $contactUs->getEmail(),
                     $contactUs->getSubject(),
                     $contactUs->getMessage()
                 ))
                 ->html(sprintf(
-                    "<p>You have a new contact form submission:</p><ul>
-                        <li><strong>Name:</strong> %s</li>
+                    "<p>Imate novu poruku:</p><ul>
+                        <li><strong>Ime:</strong> %s</li>
                         <li><strong>Email:</strong> %s</li>
-                        <li><strong>Subject:</strong> %s</li>
-                        <li><strong>Message:</strong> %s</li>
+                        <li><strong>Predmet:</strong> %s</li>
+                        <li><strong>Poruka:</strong> %s</li>
                     </ul>",
                     $contactUs->getName(),
                     $contactUs->getEmail(),
