@@ -44,8 +44,8 @@ class TestCommand extends Command
     {
 
         $email = (new Email())
-            ->from('sender@example.com')
-            ->to('pedja0023@live.com')
+            ->from('sender@admin.hannachairs.com')
+            ->to('vukovicpredrag90@gmail.com')
             ->subject('Subject Here')
             ->text('Email body here');
 
