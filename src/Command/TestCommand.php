@@ -43,40 +43,22 @@ class TestCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
 
+        $email = (new Email())
+            ->from('sender@example.com')
+            ->to('pedja0023@live.com')
+            ->subject('Subject Here')
+            ->text('Email body here');
+
         try {
-            // Create the email
-            $email = (new Email())
-                ->from('predrag.vukovic@etondigtal.com') // Sender's email
-                ->to('vukovicpredrag90@gmail.com') // Recipient's email
-                ->subject('New Contact Us Submission')
-                ->text(sprintf(
-                    "You have a new contact form submission:\n\nName: %s\nEmail: %s\nSubject: %s\nMessage: %s",
-                    'a',
-                    'b',
-                    'c',
-                    'd'
-                ))
-                ->html(sprintf(
-                    "<p>You have a new contact form submission:</p><ul>
-                        <li><strong>Name:</strong> %s</li>
-                        <li><strong>Email:</strong> %s</li>
-                        <li><strong>Subject:</strong> %s</li>
-                        <li><strong>Message:</strong> %s</li>
-                    </ul>",
-                   'a',
-                    'b',
-                    'c',
-                    'd'
-                ));
-
-            // Send the email
+            // Try to send the email
             $this->mailer->send($email);
+            echo "Email sent successfully!";
         } catch (TransportExceptionInterface $e) {
-            // Log the error
-            $this->logger->error('Email sending failed: ' . $e->getMessage());
-
-            // Optionally log to error log
-            error_log('Email sending failed: ' . $e->getMessage());
+            // Handle transport exceptions (e.g., authentication issues)
+            echo "Failed to send email: " . $e->getMessage();
+        } catch (\Exception $e) {
+            // Handle any other exceptions
+            echo "An error occurred: " . $e->getMessage();
         }
 
         return 1;
