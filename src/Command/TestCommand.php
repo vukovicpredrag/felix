@@ -1,21 +1,28 @@
 <?php
 
+namespace App\Command;
 
-namespace App\EventListener;
-
-use App\Entity\ContactUs;
-use Doctrine\Bundle\DoctrineBundle\Attribute\AsEntityListener;
-use Doctrine\ORM\Events;
+use App\Entity\User;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\Console\Attribute\AsCommand;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
-use Psr\Log\LoggerInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
- * ContactUs post persist listener
+ * Command for creating superadmin users
  */
-#[AsEntityListener(event: Events::postPersist, method: 'onPostPersist', entity: ContactUs::class)]
-class ContactEmailListener
+#[AsCommand(
+    name: 'app:create-superadmin',
+    description: 'Creates superadmin user.'
+)]
+class TestCommand extends Command
 {
     private MailerInterface $mailer;
     private LoggerInterface $logger;
@@ -24,18 +31,17 @@ class ContactEmailListener
     {
         $this->mailer = $mailer;
         $this->logger = $logger;
+        parent::__construct();
+
     }
 
-    /**
-     * Dispatch event to create notifications for contact creation
-     *
-     * @param ContactUs $contactUs
-     *
-     * @return void
-     */
-    public function onPostPersist(ContactUs $contactUs): void
-    {
 
+
+    /**
+     * @inheritDoc
+     */
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
 
         try {
             // Create the email
@@ -45,10 +51,10 @@ class ContactEmailListener
                 ->subject('New Contact Us Submission')
                 ->text(sprintf(
                     "You have a new contact form submission:\n\nName: %s\nEmail: %s\nSubject: %s\nMessage: %s",
-                    $contactUs->getName(),
-                    $contactUs->getEmail(),
-                    $contactUs->getSubject(),
-                    $contactUs->getMessage()
+                    'a',
+                    'b',
+                    'c',
+                    'd'
                 ))
                 ->html(sprintf(
                     "<p>You have a new contact form submission:</p><ul>
@@ -57,15 +63,14 @@ class ContactEmailListener
                         <li><strong>Subject:</strong> %s</li>
                         <li><strong>Message:</strong> %s</li>
                     </ul>",
-                    $contactUs->getName(),
-                    $contactUs->getEmail(),
-                    $contactUs->getSubject(),
-                    nl2br($contactUs->getMessage())
+                   'a',
+                    'b',
+                    'c',
+                    'd'
                 ));
 
             // Send the email
             $this->mailer->send($email);
-
         } catch (TransportExceptionInterface $e) {
             // Log the error
             $this->logger->error('Email sending failed: ' . $e->getMessage());
@@ -73,5 +78,16 @@ class ContactEmailListener
             // Optionally log to error log
             error_log('Email sending failed: ' . $e->getMessage());
         }
+
+        return 1;
     }
+
+    /**
+     * @inheritDoc
+     */
+    protected function configure(): void
+    {
+
+    }
+
 }
