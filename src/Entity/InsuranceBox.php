@@ -33,6 +33,12 @@ class InsuranceBox
     #[ORM\Column(length: 1000, nullable: true)]
     private ?string $text3 = null;
 
+    #[ORM\Column(length: 500, nullable: true)]
+    private ?string $ctaTitle = null;
+
+    #[ORM\Column(length: 500, nullable: true)]
+    private ?string $ctaLink = null;
+
 
 
     public function getId(): ?int
@@ -108,6 +114,30 @@ class InsuranceBox
     public function setText3(?string $text3): static
     {
         $this->text3 = $text3;
+
+        return $this;
+    }
+
+    public function getCtaTitle(): ?string
+    {
+        return $this->ctaTitle;
+    }
+
+    public function setCtaTitle(?string $ctaTitle): static
+    {
+        $this->ctaTitle = $ctaTitle;
+
+        return $this;
+    }
+
+    public function getCtaLink(): ?string
+    {
+        return $this->ctaLink;
+    }
+
+    public function setCtaLink(?string $ctaLink): static
+    {
+        $this->ctaLink = $ctaLink;
 
         return $this;
     }

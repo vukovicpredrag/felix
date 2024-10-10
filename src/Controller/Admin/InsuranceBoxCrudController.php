@@ -86,6 +86,8 @@ class InsuranceBoxCrudController extends AbstractCrudController
     {
 
         return [
+            TextField::new('ctaTitle', 'CTA Naslov (ostaviti prazno ako ne zelite da se dugme prikaze)'),
+            TextField::new('ctaLink', 'CTA Link'),
             ImageField::new('icon', 'Ikona Prve stavke ')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
