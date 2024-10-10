@@ -136,10 +136,10 @@ class Product
     private ?string $learnMoreLink = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $bestSeller = null;
+    private ?bool $bestSeller = false;
 
     #[ORM\Column(nullable: true)]
-    private ?int $highlightedProduct = null;
+    private ?bool $highlightedProduct = false;
 
     public function getId(): ?int
     {
@@ -520,24 +520,24 @@ class Product
         return $this;
     }
 
-    public function getBestSeller(): ?int
+    public function getBestSeller(): ?bool
     {
         return $this->bestSeller;
     }
 
-    public function setBestSeller(?int $bestSeller): static
+    public function setBestSeller(?bool $bestSeller): static
     {
         $this->bestSeller = $bestSeller;
 
         return $this;
     }
 
-    public function getHighlightedProduct(): ?int
+    public function getHighlightedProduct(): ?bool
     {
         return $this->highlightedProduct;
     }
 
-    public function setHighlightedProduct(?int $highlightedProduct): static
+    public function setHighlightedProduct(?bool $highlightedProduct): static
     {
         $this->highlightedProduct = $highlightedProduct;
 
