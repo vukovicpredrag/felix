@@ -110,7 +110,7 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('ribbonIndicator', 'Indikator trake (new - Novo, sale - Rasprodaja)')->hideOnIndex(),
             TextField::new('ribbonIndicatorText', 'Tekst indikatora trake')->hideOnIndex(),
             IntegerField::new('mainPrice', 'Glavna cena'),
-            IntegerField::new('discoutedPrice', 'Cijena sa popustom')->hideOnIndex(),
+            IntegerField::new('discountedPrice', 'Cijena sa popustom')->hideOnIndex(),
 
 //
 //            ImageField::new('singeProductTermsBox1Icon', 'Ikona Prve stavke uslova')
