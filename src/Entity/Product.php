@@ -55,7 +55,7 @@ class Product
     private ?string $mainPrice = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $discoutedPrice = null;
+    private ?string $discountedPrice = null;
 
     #[ORM\Column(length: 500, nullable: true)]
     private ?string $singeProductTermsBox1Icon = null;
@@ -223,14 +223,14 @@ class Product
         return $this;
     }
 
-    public function getDiscoutedPrice(): ?string
+    public function getDiscountedPrice(): ?string
     {
-        return $this->discoutedPrice;
+        return $this->discountedPrice;
     }
 
-    public function setDiscoutedPrice(?string $discoutedPrice): static
+    public function setDiscountedPrice(?string $discountedPrice): static
     {
-        $this->discoutedPrice = $discoutedPrice;
+        $this->discountedPrice = $discountedPrice;
         return $this;
     }
 
