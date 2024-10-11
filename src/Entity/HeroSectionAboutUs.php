@@ -8,7 +8,7 @@ use App\Repository\HeroSectionHomeRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: HeroSectionHomeRepository::class)]
+#[ORM\Entity(repositoryClass: HeroSectionAboutUSRepository::class)]
 #[ApiResource]
 class HeroSectionAboutUs
 {
