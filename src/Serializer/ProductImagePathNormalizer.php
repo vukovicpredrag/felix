@@ -169,7 +169,8 @@ class ProductImagePathNormalizer implements NormalizerInterface
             || $data instanceof SaleSection
             || $data instanceof TabsSectionTabsData
             || $data instanceof Blog
-            || $data instanceof BlogSections;
+            || $data instanceof BlogSections
+            || $data instanceof InsuranceBox;
     }
 
     public function getSupportedTypes(?string $format): array
@@ -187,6 +188,8 @@ class ProductImagePathNormalizer implements NormalizerInterface
             TabsSectionTabsData::class => true,
             Blog::class => true,
             BlogSections::class => true,
+            InsuranceBox::class => true,
+
         ];
     }
 }
