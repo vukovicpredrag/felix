@@ -20,7 +20,9 @@ use Doctrine\ORM\Mapping as ORM;
         'category' => 'exact',
         'ribbonIndicator' => 'exact',
         'bestSeller' => 'exact',
-        'highlightedProduct' => 'exact'
+        'highlightedProduct' => 'exact',
+        'new' => 'exact',
+        'sale' => 'exact'
     ])
 ]
 #[ApiFilter(OrderFilter::class, properties: ['title'], arguments: ['orderParameterName' => 'order'])]
@@ -140,6 +142,12 @@ class Product
 
     #[ORM\Column(nullable: true)]
     private ?bool $highlightedProduct = false;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $new = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $sale = null;
 
     public function getId(): ?int
     {
@@ -540,6 +548,30 @@ class Product
     public function setHighlightedProduct(?bool $highlightedProduct): static
     {
         $this->highlightedProduct = $highlightedProduct;
+
+        return $this;
+    }
+
+    public function isNew(): ?bool
+    {
+        return $this->new;
+    }
+
+    public function setNew(?bool $new): static
+    {
+        $this->new = $new;
+
+        return $this;
+    }
+
+    public function isSale(): ?bool
+    {
+        return $this->sale;
+    }
+
+    public function setSale(?bool $sale): static
+    {
+        $this->sale = $sale;
 
         return $this;
     }
