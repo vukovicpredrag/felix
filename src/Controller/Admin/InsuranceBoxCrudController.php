@@ -72,7 +72,7 @@ class InsuranceBoxCrudController extends AbstractCrudController
                 return $action->setLabel('Sačuvaj i vrati se'); // Prilagođena oznaka za "Sačuvaj i vrati se" na stranici za dodavanje
             })
             ->disable(Action::NEW) // This will hide the "Add New" button
-            ->disable(Action::DELETE) // This will hide the "Add New" button;
+            ->disable(Action::DELETE); // This will hide the "Add New" button;
     }
 
     public function configureCrud(Crud $crud): Crud
