@@ -10,7 +10,7 @@ class HeroSectionAboutUsRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, HeroSectionAboutUs::class);
+        parent::__construct($registry, HeroSectionAboutUsRepository::class);
     }
 
     // Add custom query methods here if needed
