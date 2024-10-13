@@ -28,6 +28,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
         'category' => 'exact',
     ])
 ]
+#[ApiResource(paginationItemsPerPage: 12)]
 class Blog
 {
     use TimestampableEntity;
