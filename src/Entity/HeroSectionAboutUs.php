@@ -3,11 +3,11 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
-use App\Repository\HeroSectionAboutUSRepository;
+use App\Repository\HeroSectionAboutUsRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: HeroSectionAboutUSRepository::class)]
+#[ORM\Entity(repositoryClass: HeroSectionAboutUsRepository::class)]
 #[ApiResource]
 class HeroSectionAboutUs
 {
