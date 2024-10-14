@@ -144,10 +144,10 @@ class Product
     private ?bool $highlightedProduct = false;
 
     #[ORM\Column(nullable: true)]
-    private ?bool $new = null;
+    private ?bool $new = true;
 
     #[ORM\Column(nullable: true)]
-    private ?bool $sale = null;
+    private ?bool $sale = false;
 
     public function getId(): ?int
     {
@@ -552,7 +552,7 @@ class Product
         return $this;
     }
 
-    public function isNew(): ?bool
+    public function isNew(): ?int
     {
         return $this->new;
     }
@@ -564,7 +564,7 @@ class Product
         return $this;
     }
 
-    public function isSale(): ?bool
+    public function isSale(): ?int
     {
         return $this->sale;
     }
