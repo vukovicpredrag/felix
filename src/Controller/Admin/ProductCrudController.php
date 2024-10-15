@@ -13,6 +13,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
@@ -109,6 +110,8 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('slug'),
             //TextField::new('ribbonIndicator', 'Indikator trake (new - Novo, sale - Rasprodaja)')->hideOnIndex(),
 
+
+            FormField::addPanel('Odaberite jednu opciju'),
             BooleanField::new('new', 'Novo'),
             BooleanField::new('sale', 'Rasprodaja'),
 
