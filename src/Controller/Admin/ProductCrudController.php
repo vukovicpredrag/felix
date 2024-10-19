@@ -196,7 +196,7 @@ class ProductCrudController extends AbstractCrudController
                 ->setRequired(false)->hideOnIndex(),
 
             BooleanField::new('bestSeller', 'Najprodavaniji'),
-            BooleanField::new('highlightedProduct', 'Izdvojen proizvod'),
+          //  BooleanField::new('highlightedProduct', 'Izdvojen proizvod'),
 
 
             ArrayField::new('keywords', 'Ključne reči')->hideOnIndex()->setHelp('Preporučivo da se popuni zbog SEO optimizacije'),
