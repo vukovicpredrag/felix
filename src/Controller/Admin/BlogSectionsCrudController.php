@@ -70,7 +70,7 @@ class BlogSectionsCrudController extends AbstractCrudController
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false)
-                ->setHelp('Preporučen je png format slike zbog automatske optimizacije'),
+                ->setHelp('Preporučen je webp format slike zbog automatske optimizacije'),
             TextareaField::new('blogSectionImgDescription', 'Opis Slike Sekcije'),
             TextEditorField::new('secondParagraph', 'Drugi Paragraf'),
             TextField::new('ctaSectionTitle', 'Naslov CTA Sekcije'),

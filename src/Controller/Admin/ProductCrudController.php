@@ -99,7 +99,7 @@ class ProductCrudController extends AbstractCrudController
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false)
-                ->setHelp('Preporučen je png format slike zbog automatske optimizacije'),
+                ->setHelp('Preporučen je webp format slike zbog automatske optimizacije'),
             ChoiceField::new('category', 'Kategorija')
                 ->setChoices($categoryChoices) // Set the dynamically fetched categories as choices
                 ->renderExpanded(false) // Render as a dropdown (false for select, true for radio buttons)
@@ -143,7 +143,7 @@ class ProductCrudController extends AbstractCrudController
 //            TextEditorField::new('singeProductTermsBox3Text2', 'Tekst treće stavke uslova 2')->hideOnIndex(),
 //            TextEditorField::new('singleProductAvailabilityText', 'Tekst o dostupnosti proizvoda')->hideOnIndex(),
 
-            ImageField::new('image1', 'Slika 1 (Za slike je preporučen png format slike zbog automatske optimizacije)')
+            ImageField::new('image1', 'Slika 1 (Za slike je preporučen webp format slike zbog automatske optimizacije)')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')

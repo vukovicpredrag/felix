@@ -71,7 +71,7 @@ class BlogCrudController extends AbstractCrudController
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false)
-                ->setHelp('Preporučen je png format slike zbog automatske optimizacije'),
+                ->setHelp('Preporučen je webp format slike zbog automatske optimizacije'),
             TextareaField::new('featuredImageDescription', 'Opis Istaknute Slike'),
             TextEditorField::new('blogIntroParagraph', 'Uvodni Paragraf'),
         ];

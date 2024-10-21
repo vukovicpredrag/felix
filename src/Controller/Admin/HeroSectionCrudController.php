@@ -83,7 +83,7 @@ class HeroSectionCrudController extends AbstractCrudController
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false)
-                ->setHelp('Preporučen je png format slike zbog automatske optimizacije'),
+                ->setHelp('Preporučen je webp format slike zbog automatske optimizacije'),
         ];
     }
 
