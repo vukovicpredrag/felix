@@ -36,7 +36,7 @@ class ContactEmailListener
     {
         try {
             // Define the public URL to the logo
-            $logoUrl = 'https://admin.hannachairs.com/admin/assets/images/hanna-logo.avif';
+            $logoUrl = 'https://admin.hannachairs.com/assets/images/hanna-logo.avif';
 
             // Create the email
             $email = (new Email())
