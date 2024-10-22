@@ -55,7 +55,7 @@ class ContactEmailListener
                         <!-- Body content -->
                         <div style="padding: 20px 0;">
                         <p>Poštovani %s,</p>
-<p>Zahvaljujemo vam što ste nas kontaktirali. Primili smo vašu poruku i javit ćemo vam se u najkraćem mogućem roku. U nastavku je sažetak vašeg upita:</p>
+<p>Zahvaljujemo Vam što ste nas kontaktirali. Primili smo vašu poruku i javit ćemo vam se u najkraćem mogućem roku. U nastavku je sažetak vašeg upita:</p>
                             <ul style="list-style: none; padding: 0;">
                                 <li><strong>Ime:</strong> %s</li>
                                 <li><strong>Email:</strong> %s</li>
@@ -68,7 +68,7 @@ class ContactEmailListener
                         <div style="text-align: center; padding: 20px 0; border-top: 1px solid #ddd;">
                             <p style="font-size: 12px; color: #777;">&copy; 2024 Hanna Chairs. Sva prava zdržana.</p>
                             <p style="font-size: 12px; color: #777;">
-                                Visit us at <a href="https://hannachairs.com" style="color: #3498db;">hannachairs.com</a>
+                                Posjetite nas <a href="https://hannachairs.com" style="color: #3498db;">hannachairs.com</a>
                             </p>
                         </div>
 
