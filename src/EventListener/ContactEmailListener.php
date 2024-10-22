@@ -40,7 +40,7 @@ class ContactEmailListener
 
             // Create the email
             $email = (new Email())
-                ->from('info@admin.hannachairs.com') // Sender's email
+                ->from('hannachairs@admin.hannachairs.com') // Sender's email
                 ->to($contactUs->getEmail()) // Recipient's email
                 ->subject('Hanna Chairs Kontakt')
                 ->html(sprintf(
