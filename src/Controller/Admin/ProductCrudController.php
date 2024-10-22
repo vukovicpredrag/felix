@@ -107,7 +107,7 @@ class ProductCrudController extends AbstractCrudController
 
             TextEditorField::new('shortDescription', 'Kratak opis'),
             TextEditorField::new('mainDescription', 'Glavni opis')->hideOnIndex(),
-            TextField::new('slug'),
+          //  TextField::new('slug'),
             //TextField::new('ribbonIndicator', 'Indikator trake (new - Novo, sale - Rasprodaja)')->hideOnIndex(),
 
 

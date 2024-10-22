@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
@@ -74,6 +75,9 @@ class BlogCrudController extends AbstractCrudController
                 ->setHelp('Preporučen je webp format slike zbog automatske optimizacije'),
             TextareaField::new('featuredImageDescription', 'Opis Istaknute Slike'),
             TextEditorField::new('blogIntroParagraph', 'Uvodni Paragraf'),
+            ArrayField::new('keywords', 'Ključne reči')->hideOnIndex()->setHelp('Preporučivo da se popuni zbog SEO optimizacije'),
+            TextField::new('metaDescription', 'Meta Description')->hideOnIndex()->setHelp('Preporučivo da se popuni zbog SEO optimizacije'),
+
         ];
     }
 }

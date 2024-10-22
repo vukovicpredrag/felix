@@ -72,6 +72,12 @@ class Blog
     #[Groups(['blog:read', 'blog:write'])]
     private ?string $blogIntroParagraph = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $metaDescription = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?array $keywords = null;
+
     /**
      * @var Collection<int, BlogSections>
      */
@@ -197,6 +203,29 @@ class Blog
             }
         }
 
+        return $this;
+    }
+
+    public function getMetaDescription(): ?string
+    {
+        return $this->metaDescription;
+    }
+
+    public function setMetaDescription(?string $metaDescription): static
+    {
+        $this->metaDescription = $metaDescription;
+        return $this;
+    }
+
+
+    public function getKeywords(): ?array
+    {
+        return $this->keywords;
+    }
+
+    public function setKeywords(?array $keywords): static
+    {
+        $this->keywords = $keywords;
         return $this;
     }
 }

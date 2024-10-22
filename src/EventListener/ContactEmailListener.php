@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\EventListener;
 
 use App\Entity\ContactUs;
@@ -35,32 +34,52 @@ class ContactEmailListener
      */
     public function onPostPersist(ContactUs $contactUs): void
     {
-
-
         try {
+            // Define the public URL to the logo
+            $logoUrl = 'https://admin.hannachairs.com/admin/assets/images/hanna-logo.avif';
+
             // Create the email
             $email = (new Email())
                 ->from('info@admin.hannachairs.com') // Sender's email
                 ->to($contactUs->getEmail()) // Recipient's email
                 ->subject('Hanna Chairs Kontakt')
-                ->text(sprintf(
-                    "Imate novu poruku:\n\nName: %s\nEmail: %s\nSubject: %s\nMessage: %s",
-                    $contactUs->getName(),
-                    $contactUs->getEmail(),
-                    $contactUs->getSubject(),
-                    $contactUs->getMessage()
-                ))
                 ->html(sprintf(
-                    "<p>Imate novu poruku:</p><ul>
-                        <li><strong>Ime:</strong> %s</li>
-                        <li><strong>Email:</strong> %s</li>
-                        <li><strong>Predmet:</strong> %s</li>
-                        <li><strong>Poruka:</strong> %s</li>
-                    </ul>",
-                    $contactUs->getName(),
-                    $contactUs->getEmail(),
-                    $contactUs->getSubject(),
-                    nl2br($contactUs->getMessage())
+                    '
+                    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #ddd; padding: 20px;">
+
+                        <!-- Header with logo -->
+                        <div style="text-align: center; padding: 20px 0; border-bottom: 1px solid #ddd;">
+                            <img src="%s" alt="Hanna Chairs Logo" style="width: 150px;" />
+                        </div>
+
+                        <!-- Body content -->
+                        <div style="padding: 20px 0;">
+                        <p>Poštovani %s,</p>
+<p>Zahvaljujemo vam što ste nas kontaktirali. Primili smo vašu poruku i javit ćemo vam se u najkraćem mogućem roku. U nastavku je sažetak vašeg upita:</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li><strong>Ime:</strong> %s</li>
+                                <li><strong>Email:</strong> %s</li>
+                                <li><strong>Predmet:</strong> %s</li>
+                                <li><strong>Poruka:</strong> %s</li>
+                            </ul>
+                        </div>
+
+                        <!-- Footer -->
+                        <div style="text-align: center; padding: 20px 0; border-top: 1px solid #ddd;">
+                            <p style="font-size: 12px; color: #777;">&copy; 2024 Hanna Chairs. Sva prava zdržana.</p>
+                            <p style="font-size: 12px; color: #777;">
+                                Visit us at <a href="https://hannachairs.com" style="color: #3498db;">hannachairs.com</a>
+                            </p>
+                        </div>
+
+                    </div>
+                    ',
+                    $logoUrl, // Logo URL
+                    $contactUs->getName(), // Name
+                    $contactUs->getName(), // Name
+                    $contactUs->getEmail(), // Email
+                    $contactUs->getSubject(), // Subject
+                    nl2br($contactUs->getMessage()) // Message
                 ));
 
             // Send the email
