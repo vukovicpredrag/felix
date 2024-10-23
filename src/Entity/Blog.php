@@ -73,9 +73,12 @@ class Blog
     private ?string $blogIntroParagraph = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+
+    #[Groups(['blog:read', 'blog:write'])]
     private ?string $metaDescription = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups(['blog:read', 'blog:write'])]
     private ?array $keywords = null;
 
     /**
