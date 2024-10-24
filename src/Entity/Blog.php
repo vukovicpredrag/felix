@@ -84,7 +84,8 @@ class Blog
     /**
      * @var Collection<int, BlogSections>
      */
-    #[ORM\OneToMany(targetEntity: BlogSections::class, mappedBy: 'blog')]
+
+    #[ORM\OneToMany(targetEntity: BlogSections::class, mappedBy: 'blog', cascade: ['persist', 'remove'])]
     #[Groups(['blog:read'])]
     private Collection $blogSections;
 
