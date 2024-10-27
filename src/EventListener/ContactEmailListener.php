@@ -85,6 +85,51 @@ class ContactEmailListener
             // Send the email
             $this->mailer->send($email);
 
+            // Create the email
+            $email = (new Email())
+                ->from('info@hannachairs.com') // Sender's email
+                ->to('vukovicpredrag90@gmail.com') // Administrator's email
+                ->subject('Novi upit od Hanna Chairs Kontakt')
+                ->html(sprintf(
+                    '
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #ddd; padding: 20px;">
+            <!-- Header with logo -->
+            <div style="text-align: center; padding: 20px 0; border-bottom: 1px solid #ddd;">
+                <img src="%s" alt="Hanna Chairs Logo" style="width: 150px;" />
+            </div>
+
+            <!-- Body content -->
+            <div style="padding: 20px 0;">
+                <p>Poštovani administratoru,</p>
+                <p>Primljen je novi upit putem forme za kontakt na Hanna Chairs web stranici. Detalji upita su sljedeći:</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li><strong>Ime:</strong> %s</li>
+                    <li><strong>Email:</strong> %s</li>
+                    <li><strong>Predmet:</strong> %s</li>
+                    <li><strong>Poruka:</strong> %s</li>
+                </ul>
+            </div>
+
+            <!-- Footer -->
+            <div style="text-align: center; padding: 20px 0; border-top: 1px solid #ddd;">
+                <p style="font-size: 12px; color: #777;">&copy; 2024 Hanna Chairs. Sva prava zadržana.</p>
+                <p style="font-size: 12px; color: #777;">
+                    Posjetite nas <a href="https://hannachairs.com" style="color: #3498db;">hannachairs.com</a>
+                </p>
+            </div>
+        </div>
+        ',
+                    $logoUrl, // Logo URL
+                    $contactUs->getName(), // Name
+                    $contactUs->getEmail(), // Email
+                    $contactUs->getSubject(), // Subject
+                    nl2br($contactUs->getMessage()) // Message
+                ));
+
+
+            // Send the email
+            $this->mailer->send($email);
+
         } catch (TransportExceptionInterface $e) {
             // Log the error
             $this->logger->error('Email sending failed: ' . $e->getMessage());
