@@ -20,7 +20,7 @@ class UserFixture extends Fixture
     {
         // Create a sample user
         $user = new User();
-        $user->setEmail('admin@hanna.com');
+        $user->setEmail('admin@felix.com');
         $user->setRoles(['ROLE_ADMIN']);
 
         // Hash the password before setting it

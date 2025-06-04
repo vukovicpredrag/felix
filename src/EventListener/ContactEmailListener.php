@@ -36,20 +36,20 @@ class ContactEmailListener
     {
         try {
             // Define the public URL to the logo
-            $logoUrl = 'https://admin.hannachairs.com/assets/images/hanna-logo.avif';
+            $logoUrl = 'https://admin.felixstolice.ba/assets/images/hanna-logo.avif';
 
             // Create the email
             $email = (new Email())
-                ->from('info@hannachairs.com') // Sender's email
+                ->from('info@felixstolice.ba') // Sender's email
                 ->to($contactUs->getEmail()) // Recipient's email
-                ->subject('Hanna Chairs Kontakt')
+                ->subject('Felix Kontakt')
                 ->html(sprintf(
                     '
                     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #ddd; padding: 20px;">
 
                         <!-- Header with logo -->
                         <div style="text-align: center; padding: 20px 0; border-bottom: 1px solid #ddd;">
-                            <img src="%s" alt="Hanna Chairs Logo" style="width: 150px;" />
+                            <img src="%s" alt="Felix Logo" style="width: 150px;" />
                         </div>
 
                         <!-- Body content -->
@@ -66,7 +66,7 @@ class ContactEmailListener
 
                         <!-- Footer -->
                         <div style="text-align: center; padding: 20px 0; border-top: 1px solid #ddd;">
-                            <p style="font-size: 12px; color: #777;">&copy; 2024 Hanna Chairs. Sva prava zdržana.</p>
+                            <p style="font-size: 12px; color: #777;">&copy; 2024 Felix. Sva prava zdržana.</p>
                             <p style="font-size: 12px; color: #777;">
                                 Posjetite nas <a href="https://hannachairs.com" style="color: #3498db;">hannachairs.com</a>
                             </p>
@@ -87,21 +87,21 @@ class ContactEmailListener
 
             // Create the email
             $email = (new Email())
-                ->from('info@hannachairs.com') // Sender's email
-                ->to('info@hannachairs.com') // Administrator's email
-                ->subject('Novi upit od Hanna Chairs Kontakt')
+                ->from('info@felixstolice.com') // Sender's email
+                ->to('info@felixstolice.com') // Administrator's email
+                ->subject('Novi upit od Felix Kontakt')
                 ->html(sprintf(
                     '
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #ddd; padding: 20px;">
             <!-- Header with logo -->
             <div style="text-align: center; padding: 20px 0; border-bottom: 1px solid #ddd;">
-                <img src="%s" alt="Hanna Chairs Logo" style="width: 150px;" />
+                <img src="%s" alt="Felix Logo" style="width: 150px;" />
             </div>
 
             <!-- Body content -->
             <div style="padding: 20px 0;">
                 <p>Poštovani administratoru,</p>
-                <p>Primljen je novi upit putem forme za kontakt na Hanna Chairs web stranici. Detalji upita su sljedeći:</p>
+                <p>Primljen je novi upit putem forme za kontakt na Felix web stranici. Detalji upita su sljedeći:</p>
                 <ul style="list-style: none; padding: 0;">
                     <li><strong>Ime:</strong> %s</li>
                     <li><strong>Email:</strong> %s</li>
@@ -112,9 +112,9 @@ class ContactEmailListener
 
             <!-- Footer -->
             <div style="text-align: center; padding: 20px 0; border-top: 1px solid #ddd;">
-                <p style="font-size: 12px; color: #777;">&copy; 2024 Hanna Chairs. Sva prava zadržana.</p>
+                <p style="font-size: 12px; color: #777;">&copy; 2024 Felix. Sva prava zadržana.</p>
                 <p style="font-size: 12px; color: #777;">
-                    Posjetite nas <a href="https://hannachairs.com" style="color: #3498db;">hannachairs.com</a>
+                    Posjetite nas <a href="https://felixstolice.ba" style="color: #3498db;">hannachairs.com</a>
                 </p>
             </div>
         </div>
