@@ -2,21 +2,25 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\BelowIntro;
+use App\Entity\NasaPrica;
+use App\Entity\SaleSection;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class BelowIntroCrudController extends AbstractCrudController
+class NasaPricaCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return BelowIntro::class;
+        return NasaPrica::class;
     }
 
     public function configureActions(Actions $actions): Actions
@@ -57,19 +61,30 @@ class BelowIntroCrudController extends AbstractCrudController
             ->setPageTitle(Crud::PAGE_NEW, 'Kreiraj')
             ->setPageTitle(Crud::PAGE_EDIT, 'Edituj')
             ->setPageTitle(Crud::PAGE_DETAIL, 'Detalji');
-
+        // ->setEntityLabelInSingular('Kategorije linkovi')
+        //->setEntityLabelInPlural('Kategorije link');
     }
 
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('label', 'Label'),
-            TextField::new('title', 'Title'),
-            TextEditorField::new('text', 'Text'),
-            ImageField::new('image1', 'Slika')
+            //  IdField::new('id'),
+         //   BooleanField::new('hide', 'Sakrij rasprodaju'),
+            TextField::new('saleSectionTitle', 'Naslov'),
+            TextEditorField::new('saleSectionParagraph', 'Paragraf '),
+            TextField::new('saleSectionLink', 'Link sekcije '),
+            TextField::new('saleSectionLinkTitle', 'Naslov linka sekcije '),
+
+            ImageField::new('image1', 'Slika manja')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false),
+            ImageField::new('image2', 'Slika veća')
+                ->setBasePath('media/')
+                ->setUploadDir('public/media')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false),
         ];
     }
 

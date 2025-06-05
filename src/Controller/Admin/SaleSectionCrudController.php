@@ -74,26 +74,26 @@ class SaleSectionCrudController extends AbstractCrudController
             TextField::new('saleSectionLink', 'Link sekcije rasprodaje'),
             TextField::new('saleSectionLinkTitle', 'Naslov linka sekcije rasprodaje'),
 
-            ImageField::new('image1', 'Slika 1')
+            ImageField::new('image1', 'Slika manja')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false),
-            ImageField::new('image2', 'Slika 2')
+            ImageField::new('image2', 'Slika veća')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false),
-            ImageField::new('image3', 'Slika 3')
-                ->setBasePath('media/')
-                ->setUploadDir('public/media')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false),
-            ImageField::new('image4', 'Slika 4')
-                ->setBasePath('media/')
-                ->setUploadDir('public/media')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false),
+//            ImageField::new('image3', 'Slika 3')
+//                ->setBasePath('media/')
+//                ->setUploadDir('public/media')
+//                ->setUploadedFileNamePattern('[randomhash].[extension]')
+//                ->setRequired(false),
+//            ImageField::new('image4', 'Slika 4')
+//                ->setBasePath('media/')
+//                ->setUploadDir('public/media')
+//                ->setUploadedFileNamePattern('[randomhash].[extension]')
+//                ->setRequired(false),
         ];
     }
 

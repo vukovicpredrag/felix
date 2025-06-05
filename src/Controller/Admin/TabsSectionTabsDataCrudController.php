@@ -80,6 +80,8 @@ class TabsSectionTabsDataCrudController extends AbstractCrudController
                 ->setRequired(false),
             TextAreaField::new('text', 'Tekst'),
             TextField::new('linkTo', 'Link do'),
+            TextField::new('linkTitle', 'Link naslov'),
+
         ];
 
     }

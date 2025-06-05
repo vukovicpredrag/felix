@@ -28,6 +28,9 @@ use Doctrine\ORM\Mapping as ORM;
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $text = null;
 
+    #[ORM\Column(length: 250, nullable: true)]
+    private ?string $image1 = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -66,6 +69,17 @@ use Doctrine\ORM\Mapping as ORM;
     {
         $this->text = $text;
 
+        return $this;
+    }
+
+    public function getImage1(): ?string
+    {
+        return $this->image1;
+    }
+
+    public function setImage1(?string $image1): static
+    {
+        $this->image1 = $image1;
         return $this;
     }
 }

@@ -1,9 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7c6b9049-a338-4714-910f-c13e2ff6d14f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/hanna.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hanna.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EventListener/ContactEmailListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventListener/ContactEmailListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240913071829.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240913072900.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240913074212.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240913104144.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240913110517.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240913112353.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240913112710.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240913113624.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240923183040.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240923183051.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240923183711.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240923183714.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240925143915.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240927115731.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240927120344.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240927121146.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240927122307.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240927124509.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240927125302.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240927162138.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240929075532.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241005163234.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241005170825.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241005170933.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241007192517.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241007193428.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241007194047.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241007195120.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241007195619.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241007195749.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241007200147.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241007200504.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241008171409.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241008172438.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241008173051.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241008182517.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241008203542.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241008203909.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241008204638.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241009055042.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241009055323.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241009072936.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241010120035.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241010142353.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241011072242.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241013190631.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20241022081507.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/BelowIntroCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/BelowIntroCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/SaleSectionCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SaleSectionCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/TabsSectionTabsDataCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/TabsSectionTabsDataCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/BelowIntro.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BelowIntro.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/TabsSectionTabsData.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TabsSectionTabsData.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +79,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="php">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
@@ -110,7 +169,6 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
       <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
-      <path value="$PROJECT_DIR$/vendor/api-platform/core" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
@@ -121,8 +179,13 @@
       <path value="$PROJECT_DIR$/vendor/symfony/brevo-mailer" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/core 2" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/core" />
     </include_path>
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2lWDnsfnV9ydkhGSFbTJgjPBJw1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -133,8 +196,14 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Applications/XAMPP/xamppfiles/htdocs/hanna&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Applications/MAMP/htdocs/hanna&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -152,6 +221,14 @@
       <recent name="$PROJECT_DIR$/public/assets/images" />
       <recent name="$PROJECT_DIR$/src/Controller/Admin" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PS-243.25659.45" />
+        <option value="bundled-php-predefined-a98d8de5180a-1ec7b7818973-com.jetbrains.php.sharedIndexes-PS-243.25659.45" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -171,6 +248,9 @@
       <workItem from="1727957095252" duration="53919000" />
       <workItem from="1729236063819" duration="4694000" />
       <workItem from="1729933416499" duration="2939000" />
+      <workItem from="1749018475250" duration="4229000" />
+      <workItem from="1749025103429" duration="415000" />
+      <workItem from="1749042265998" duration="6737000" />
     </task>
     <servers />
   </component>
@@ -200,6 +280,11 @@
           <url>file://$PROJECT_DIR$/src/EventListener/ContactEmailListener.php</url>
           <line>88</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Entity/Blog.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

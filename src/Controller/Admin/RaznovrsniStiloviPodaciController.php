@@ -2,21 +2,23 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\BelowIntro;
+use App\Entity\RaznovrsniStiloviPodaci;
+use App\Entity\TabsSectionTabsData;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class BelowIntroCrudController extends AbstractCrudController
+class RaznovrsniStiloviPodaciController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return BelowIntro::class;
+        return RaznovrsniStiloviPodaci::class;
     }
 
     public function configureActions(Actions $actions): Actions
@@ -57,20 +59,27 @@ class BelowIntroCrudController extends AbstractCrudController
             ->setPageTitle(Crud::PAGE_NEW, 'Kreiraj')
             ->setPageTitle(Crud::PAGE_EDIT, 'Edituj')
             ->setPageTitle(Crud::PAGE_DETAIL, 'Detalji');
-
+        // ->setEntityLabelInSingular('Kategorije linkovi')
+        //->setEntityLabelInPlural('Kategorije link');
     }
+
 
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('label', 'Label'),
-            TextField::new('title', 'Title'),
-            TextEditorField::new('text', 'Text'),
-            ImageField::new('image1', 'Slika')
+            // IdField::new('id'),
+            TextField::new('title', 'Naslov taba'),
+            TextField::new('subtitle', 'Podnasov taba'),
+
+            ImageField::new('image', 'Slika')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired(false),
+
+
         ];
+
     }
 
 }

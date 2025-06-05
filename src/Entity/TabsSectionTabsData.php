@@ -31,6 +31,9 @@ class TabsSectionTabsData
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $linkTo = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $linkTitle = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -92,6 +95,18 @@ class TabsSectionTabsData
     public function setLinkTo(?string $linkTo): static
     {
         $this->linkTo = $linkTo;
+
+        return $this;
+    }
+
+    public function getLinkTitle(): ?string
+    {
+        return $this->linkTitle;
+    }
+
+    public function setLinkTitle(?string $linkTitle): static
+    {
+        $this->linkTitle = $linkTitle;
 
         return $this;
     }

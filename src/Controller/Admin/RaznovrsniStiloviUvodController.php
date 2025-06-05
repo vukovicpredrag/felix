@@ -2,26 +2,24 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\BelowIntro;
+use App\Entity\RaznovrsniStiloviUvod;
+use App\Entity\TabsSectionText;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class BelowIntroCrudController extends AbstractCrudController
+class RaznovrsniStiloviUvodController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return BelowIntro::class;
+        return RaznovrsniStiloviUvod::class;
     }
-
     public function configureActions(Actions $actions): Actions
     {
-        // Primeni prilagođene oznake na akcije na više stranica
         return $actions
             ->add(Crud::PAGE_INDEX, Action::DETAIL) // Add DETAIL action to the index page
             ->update(Crud::PAGE_INDEX, Action::NEW, function (Action $action) {
@@ -57,19 +55,16 @@ class BelowIntroCrudController extends AbstractCrudController
             ->setPageTitle(Crud::PAGE_NEW, 'Kreiraj')
             ->setPageTitle(Crud::PAGE_EDIT, 'Edituj')
             ->setPageTitle(Crud::PAGE_DETAIL, 'Detalji');
-
+        // ->setEntityLabelInSingular('Kategorije linkovi')
+        //->setEntityLabelInPlural('Kategorije link');
     }
 
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('label', 'Label'),
-            TextField::new('title', 'Title'),
-            TextEditorField::new('text', 'Text'),
-            ImageField::new('image1', 'Slika')
-                ->setBasePath('media/')
-                ->setUploadDir('public/media')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
+            // IdField::new('id'),
+            TextField::new('title', 'Naslov sekcije'),
+            TextField::new('subtitle', 'Podnaslov sekcije'),
         ];
     }
 

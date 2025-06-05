@@ -12,6 +12,7 @@ use App\Entity\Categories;
 use App\Entity\CategoryLink;
 use App\Entity\CategorySection;
 use App\Entity\Contact;
+use App\Entity\Direktori;
 use App\Entity\Footer;
 use App\Entity\HeroSection;
 use App\Entity\HeroSectionAboutUs;
@@ -21,10 +22,13 @@ use App\Entity\HomePageSlider;
 use App\Entity\InsuranceBox;
 use App\Entity\IntroSection;
 use App\Entity\MeetHanna;
+use App\Entity\NasaPrica;
 use App\Entity\Newsletter;
 use App\Entity\OurGoalsData;
 use App\Entity\Product;
 use App\Entity\Promotions;
+use App\Entity\RaznovrsniStiloviPodaci;
+use App\Entity\RaznovrsniStiloviUvod;
 use App\Entity\SaleSection;
 use App\Entity\SEO;
 use App\Entity\TabsSectionIntro;
@@ -126,6 +130,21 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('Promocije');
         yield MenuItem::linkToCrud('Promocije', 'fa-solid fa-info', Promotions::class);
+
+        yield MenuItem::section('Naša priča');
+        yield MenuItem::linkToCrud('Naša priča', 'fa-solid fa-info', NasaPrica::class);
+
+        yield MenuItem::section('Direktori');
+        yield MenuItem::linkToCrud('Direktori', 'fa fa-suitcase', Direktori::class);
+
+
+        yield MenuItem::section('Raznovrsni stilovi');
+        yield MenuItem::subMenu('Raznovrsni stilovi', 'fa-solid fa-indent')
+            ->setSubItems([
+                MenuItem::linkToCrud('Uvod', 'fa-solid fa-indent', RaznovrsniStiloviUvod::class),
+                MenuItem::linkToCrud('Podaci', 'fa-solid fa-indent', RaznovrsniStiloviPodaci::class),
+
+            ]);
 
     }
 }

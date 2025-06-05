@@ -12,3 +12,4 @@
 /public/media/
 !/public/media/.gitignore
 ###> media files ###
+.env
