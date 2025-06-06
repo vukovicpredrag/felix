@@ -32,26 +32,26 @@ class NasaPrica
         return $this->id;
     }
 
-    public function getSaleSectionTitle(): ?string
+    public function getOurStoryTitle (): ?string
     {
-        return $this->saleSectionTitle;
+        return $this->ourStoryTitle;
     }
 
-    public function setSaleSectionTitle(?string $saleSectionTitle): static
+    public function setOurStoryTitle(?string $ourStoryTitle): static
     {
-        $this->saleSectionTitle = $saleSectionTitle;
+        $this->ourStoryTitle = $ourStoryTitle;
 
         return $this;
     }
 
-    public function getSaleSectionParagraph(): ?string
+    public function getOurStoryParagraph(): ?string
     {
-        return $this->saleSectionParagraph;
+        return $this->ourStoryParagraph;
     }
 
-    public function setSaleSectionParagraph(?string $saleSectionParagraph): static
+    public function setOurStoryParagraph(?string $ourStoryParagraph): static
     {
-        $this->saleSectionParagraph = $saleSectionParagraph;
+        $this->ourStoryParagraph = $ourStoryParagraph;
 
         return $this;
     }
