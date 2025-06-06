@@ -2,7 +2,9 @@
 
 namespace App\Serializer;
 
+use App\Entity\Direktori;
 use App\Entity\InsuranceBox;
+use App\Entity\NasaPrica;
 use App\Entity\Product;
 use App\Entity\CategoryLink;
 use App\Entity\Footer;
@@ -160,6 +162,21 @@ class ProductImagePathNormalizer implements NormalizerInterface
             }
         }
 
+        if ($object instanceof NasaPrica) {
+            if ($object->getImage1() !== null) {
+                $data['image1'] = $baseUrl . $object->getImage1();
+            }
+            if ($object->getImage2() !== null) {
+                $data['image2'] = $baseUrl . $object->getImage2();
+            }
+        }
+
+        if ($object instanceof Direktori) {
+            if ($object->getImage() !== null) {
+                $data['image'] = $baseUrl . $object->getImage();
+            }
+        }
+
         return $data;
     }
 
@@ -178,7 +195,10 @@ class ProductImagePathNormalizer implements NormalizerInterface
             || $data instanceof Blog
             || $data instanceof BlogSections
             || $data instanceof InsuranceBox
-            || $data instanceof RaznovrsniStiloviPodaci;
+            || $data instanceof RaznovrsniStiloviPodaci
+            || $data instanceof NasaPrica
+            || $data instanceof Direktori;
+
     }
 
     public function getSupportedTypes(?string $format): array
@@ -198,6 +218,8 @@ class ProductImagePathNormalizer implements NormalizerInterface
             BlogSections::class => true,
             InsuranceBox::class => true,
             RaznovrsniStiloviPodaci::class => true,
+            NasaPrica::class => true,
+            Direktori::class => true,
 
         ];
     }
