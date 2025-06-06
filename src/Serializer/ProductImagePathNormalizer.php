@@ -164,8 +164,8 @@ class ProductImagePathNormalizer implements NormalizerInterface
         }
 
         if ($object instanceof NasaPrica) {
-            if ($object->getImage1() !== null) {
-                $data['image1'] = $baseUrl . $object->getImage1();
+            if ($object->getImage() !== null) {
+                $data['image'] = $baseUrl . $object->getImage();
             }
             if ($object->getImage2() !== null) {
                 $data['image2'] = $baseUrl . $object->getImage2();

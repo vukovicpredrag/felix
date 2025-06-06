@@ -17,31 +17,15 @@ class NasaPrica
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $saleSectionTitle = null;
+    private ?string $ourStoryTitle = null;
 
     #[ORM\Column(length: 1000, nullable: true)]
-    private ?string $saleSectionParagraph = null;
+    private ?string $ourStoryParagraph = null;
+
 
     #[ORM\Column(length: 500, nullable: true)]
-    private ?string $saleSectionLink = null;
+    private ?string $image = null;
 
-    #[ORM\Column(length: 500, nullable: true)]
-    private ?string $saleSectionLinkTitle = null;
-
-    #[ORM\Column(length: 500, nullable: true)]
-    private ?string $image1 = null;
-
-    #[ORM\Column(length: 500, nullable: true)]
-    private ?string $image2 = null;
-
-    #[ORM\Column(length: 500, nullable: true)]
-    private ?string $image3 = null;
-
-    #[ORM\Column(length: 500, nullable: true)]
-    private ?string $image4 = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?bool $hide = false;
 
     public function getId(): ?int
     {
@@ -96,14 +80,14 @@ class NasaPrica
         return $this;
     }
 
-    public function getImage1(): ?string
+    public function getImage(): ?string
     {
-        return $this->image1;
+        return $this->image;
     }
 
-    public function setImage1(?string $image1): static
+    public function setImage(?string $image): static
     {
-        $this->image1 = $image1;
+        $this->image = $image;
 
         return $this;
     }

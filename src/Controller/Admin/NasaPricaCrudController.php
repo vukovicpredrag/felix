@@ -70,11 +70,11 @@ class NasaPricaCrudController extends AbstractCrudController
         return [
             //  IdField::new('id'),
          //   BooleanField::new('hide', 'Sakrij rasprodaju'),
-            TextField::new('saleSectionTitle', 'Naslov'),
-            TextEditorField::new('saleSectionParagraph', 'Paragraf '),
+            TextField::new('ourStoryTitle ', 'Naslov'),
+            TextEditorField::new('ourStoryParagraph ', 'Paragraf '),
 //            TextField::new('saleSectionLink', 'Link sekcije '),
 //            TextField::new('saleSectionLinkTitle', 'Naslov linka sekcije '),
-            ImageField::new('image1', 'Slika')
+            ImageField::new('image', 'Slika')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
