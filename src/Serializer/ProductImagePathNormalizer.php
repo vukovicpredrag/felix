@@ -230,6 +230,7 @@ class ProductImagePathNormalizer implements NormalizerInterface
             RaznovrsniStiloviPodaci::class => true,
             NasaPrica::class => true,
             Direktori::class => true,
+            BelowIntro::class => true,
 
         ];
     }
