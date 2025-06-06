@@ -55,30 +55,7 @@ class NasaPrica
 
         return $this;
     }
-
-    public function getSaleSectionLink(): ?string
-    {
-        return $this->saleSectionLink;
-    }
-
-    public function setSaleSectionLink(?string $saleSectionLink): static
-    {
-        $this->saleSectionLink = $saleSectionLink;
-
-        return $this;
-    }
-
-    public function getSaleSectionLinkTitle(): ?string
-    {
-        return $this->saleSectionLinkTitle;
-    }
-
-    public function setSaleSectionLinkTitle(?string $saleSectionLinkTitle): static
-    {
-        $this->saleSectionLinkTitle = $saleSectionLinkTitle;
-
-        return $this;
-    }
+    
 
     public function getImage(): ?string
     {
