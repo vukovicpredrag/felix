@@ -197,6 +197,7 @@ class ProductImagePathNormalizer implements NormalizerInterface
             Blog::class => true,
             BlogSections::class => true,
             InsuranceBox::class => true,
+            RaznovrsniStiloviPodaci::class => true,
 
         ];
     }
