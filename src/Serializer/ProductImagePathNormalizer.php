@@ -167,9 +167,6 @@ class ProductImagePathNormalizer implements NormalizerInterface
             if ($object->getImage() !== null) {
                 $data['image'] = $baseUrl . $object->getImage();
             }
-            if ($object->getImage2() !== null) {
-                $data['image2'] = $baseUrl . $object->getImage2();
-            }
         }
 
         if ($object instanceof Direktori) {
