@@ -2,6 +2,7 @@
 
 namespace App\Serializer;
 
+use App\Entity\BelowIntro;
 use App\Entity\Direktori;
 use App\Entity\InsuranceBox;
 use App\Entity\NasaPrica;
@@ -177,6 +178,14 @@ class ProductImagePathNormalizer implements NormalizerInterface
             }
         }
 
+        if ($object instanceof BelowIntro) {
+            if ($object->getImage1() !== null) {
+                $data['image1'] = $baseUrl . $object->getImage1();
+            }
+        }
+
+
+
         return $data;
     }
 
@@ -197,7 +206,8 @@ class ProductImagePathNormalizer implements NormalizerInterface
             || $data instanceof InsuranceBox
             || $data instanceof RaznovrsniStiloviPodaci
             || $data instanceof NasaPrica
-            || $data instanceof Direktori;
+            || $data instanceof Direktori
+            || $data instanceof BelowIntro;
 
     }
 
