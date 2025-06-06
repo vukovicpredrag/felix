@@ -55,7 +55,7 @@ class NasaPrica
 
         return $this;
     }
-    
+
 
     public function getImage(): ?string
     {
@@ -69,51 +69,4 @@ class NasaPrica
         return $this;
     }
 
-    public function getImage2(): ?string
-    {
-        return $this->image2;
-    }
-
-    public function setImage2(?string $image2): static
-    {
-        $this->image2 = $image2;
-
-        return $this;
-    }
-
-    public function getImage3(): ?string
-    {
-        return $this->image3;
-    }
-
-    public function setImage3(?string $image3): static
-    {
-        $this->image3 = $image3;
-
-        return $this;
-    }
-
-    public function getImage4(): ?string
-    {
-        return $this->image4;
-    }
-
-    public function setImage4(?string $image4): static
-    {
-        $this->image4 = $image4;
-
-        return $this;
-    }
-
-    public function getHide(): ?bool
-    {
-        return $this->hide;
-    }
-
-    public function setHide(?bool $hide): static
-    {
-        $this->hide = $hide;
-
-        return $this;
-    }
 }
