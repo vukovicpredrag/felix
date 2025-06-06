@@ -11,6 +11,7 @@ use App\Entity\HeroSectionAboutUs;
 use App\Entity\HeroSectionHome;
 use App\Entity\IntroSection;
 use App\Entity\MeetHanna;
+use App\Entity\RaznovrsniStiloviPodaci;
 use App\Entity\SaleSection;
 use App\Entity\TabsSectionTabsData;
 use App\Entity\Blog;
@@ -153,6 +154,12 @@ class ProductImagePathNormalizer implements NormalizerInterface
             }
         }
 
+        if ($object instanceof RaznovrsniStiloviPodaci) {
+            if ($object->getImage() !== null) {
+                $data['image'] = $baseUrl . $object->getImage();
+            }
+        }
+
         return $data;
     }
 
@@ -170,7 +177,8 @@ class ProductImagePathNormalizer implements NormalizerInterface
             || $data instanceof TabsSectionTabsData
             || $data instanceof Blog
             || $data instanceof BlogSections
-            || $data instanceof InsuranceBox;
+            || $data instanceof InsuranceBox
+            || $data instanceof RaznovrsniStiloviPodaci;
     }
 
     public function getSupportedTypes(?string $format): array
