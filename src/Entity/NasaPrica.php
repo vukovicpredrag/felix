@@ -3,10 +3,11 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
+use App\Repository\NasaPricaRepository;
 use App\Repository\SaleSectionRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: SaleSectionRepository::class)]
+#[ORM\Entity(repositoryClass: NasaPricaRepository::class)]
 #[ApiResource]
 class NasaPrica
 {

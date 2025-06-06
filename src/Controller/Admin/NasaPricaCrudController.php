@@ -72,15 +72,9 @@ class NasaPricaCrudController extends AbstractCrudController
          //   BooleanField::new('hide', 'Sakrij rasprodaju'),
             TextField::new('saleSectionTitle', 'Naslov'),
             TextEditorField::new('saleSectionParagraph', 'Paragraf '),
-            TextField::new('saleSectionLink', 'Link sekcije '),
-            TextField::new('saleSectionLinkTitle', 'Naslov linka sekcije '),
-
-            ImageField::new('image1', 'Slika manja')
-                ->setBasePath('media/')
-                ->setUploadDir('public/media')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false),
-            ImageField::new('image2', 'Slika veća')
+//            TextField::new('saleSectionLink', 'Link sekcije '),
+//            TextField::new('saleSectionLinkTitle', 'Naslov linka sekcije '),
+            ImageField::new('image1', 'Slika')
                 ->setBasePath('media/')
                 ->setUploadDir('public/media')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
