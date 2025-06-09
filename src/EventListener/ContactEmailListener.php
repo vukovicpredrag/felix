@@ -88,7 +88,7 @@ class ContactEmailListener
             // Create the email
             $email = (new Email())
                 ->from('info@felixstolice.com') // Sender's email
-                ->to('info@felixstolice.com') // Administrator's email
+                ->to('vukovicpredrag90@gmail.com') // Administrator's email
                 ->subject('Novi upit od Felix Kontakt')
                 ->html(sprintf(
                     '
