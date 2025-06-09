@@ -36,7 +36,7 @@ class ContactEmailListener
     {
         try {
             // Define the public URL to the logo
-            $logoUrl = 'https://admin.felixstolice.ba/assets/images/felix_logo.png';
+            $logoUrl = 'https://admin.felixstolice.ba/assets/images/felix-logo.png';
 
             // Create the email
             $email = (new Email())
