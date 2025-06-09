@@ -88,7 +88,7 @@ class ContactEmailListener
             // Create the email
             $email = (new Email())
                 ->from('info@felixstolice.ba') // Sender's email
-                ->to('vukovicpredrag90@gmail.com') // Administrator's email
+                ->to('felixsphuremovic@gmail.com') // Administrator's email
                 ->subject('Novi upit od Felix Kontakt')
                 ->html(sprintf(
                     '
@@ -114,7 +114,7 @@ class ContactEmailListener
             <div style="text-align: center; padding: 20px 0; border-top: 1px solid #ddd;">
                 <p style="font-size: 12px; color: #777;">&copy; 2024 Felix. Sva prava zadržana.</p>
                 <p style="font-size: 12px; color: #777;">
-                    Posjetite nas <a href="https://felixstolice.ba" style="color: #3498db;">hannachairs.com</a>
+                    Posjetite nas <a href="https://felixstolice.ba" style="color: #3498db;">felixstolice.ba</a>
                 </p>
             </div>
         </div>
