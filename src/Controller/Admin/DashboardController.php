@@ -75,18 +75,9 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::section('Proizvodi');
-        yield MenuItem::linkToCrud('Proizvodi', 'fa-solid fa-chair', Product::class);
-        yield MenuItem::linkToCrud('Hero Sekcija Proizvodi', 'fa-solid fa-star', HeroSection::class);
-        yield MenuItem::linkToCrud('Slajderi', 'fa-solid fa-star', HomePageSlider::class);
-        yield MenuItem::linkToCrud('Garancije', 'fa-solid fa-star',InsuranceBox::class);
 
         yield MenuItem::section('POČETNA STRANICA');
-        yield MenuItem::subMenu('Kategorija', 'fa-solid fa-layer-group')
-            ->setSubItems([
-                MenuItem::linkToCrud('Tekstovi', 'fa-solid fa-list', CategorySection::class),
-                MenuItem::linkToCrud('Linkovi', 'fa-solid fa-list', CategoryLink::class),
-            ]);
+        yield MenuItem::linkToCrud('Hero Sekcija Početna', 'fa-solid fa-star', HeroSectionHome::class);
 
         yield MenuItem::subMenu('Tabovi', 'fa-solid fa-indent')
             ->setSubItems([
@@ -94,18 +85,20 @@ class DashboardController extends AbstractDashboardController
                 MenuItem::linkToCrud('Podaci', 'fa-solid fa-indent', TabsSectionTabsData::class),
 
             ]);
-
         yield MenuItem::linkToCrud('Rasprodaja', 'fa-solid fa-tag', SaleSection::class);
         yield MenuItem::linkToCrud('Upoznaj Hanu', 'fa-solid fa-h', MeetHanna::class);
-        yield MenuItem::linkToCrud('Hero Sekcija Početna', 'fa-solid fa-star', HeroSectionHome::class);
 
+        yield MenuItem::section('Proizvodi');
+        yield MenuItem::linkToCrud('Proizvodi', 'fa-solid fa-chair', Product::class);
+        yield MenuItem::linkToCrud('Hero Sekcija Proizvodi', 'fa-solid fa-star', HeroSection::class);
+        yield MenuItem::linkToCrud('Slajderi', 'fa-solid fa-star', HomePageSlider::class);
+        yield MenuItem::linkToCrud('Garancije', 'fa-solid fa-star',InsuranceBox::class);
 
         yield MenuItem::section('O nama');
         yield MenuItem::linkToCrud('Uvod', 'fa-solid fa-info', IntroSection::class);
         yield MenuItem::linkToCrud('Naši ciljevi naslov', 'fa-solid fa-info', OurGoalsData::class);
         yield MenuItem::linkToCrud('Naši ciljevi podaci', 'fa-solid fa-info', BelowIntro::class);
         yield MenuItem::linkToCrud('Hero Sekcija O nama', 'fa-solid fa-star', HeroSectionAboutUs::class);
-
 
         yield MenuItem::section('Kontakt');
         yield MenuItem::linkToCrud('Kontakt', 'fa-solid fa-address-book', Contact::class);
@@ -124,9 +117,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Blog', 'fa-solid fa-newspaper', Blog::class);
         yield MenuItem::linkToCrud('Blog Sekcije', 'fa-regular fa-newspaper', BlogSections::class);
 
+        yield MenuItem::section('SEO');
+        yield MenuItem::linkToCrud('SEO podaci', 'fa-solid fa-chart-simple', SEO::class);
 
-//        yield MenuItem::section('SEO');
-//        yield MenuItem::linkToCrud('SEO podaci', 'fa-solid fa-chart-simple', SEO::class);
 
         yield MenuItem::section('Promocije');
         yield MenuItem::linkToCrud('Promocije', 'fa-solid fa-info', Promotions::class);
@@ -136,7 +129,6 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('Direktori');
         yield MenuItem::linkToCrud('Direktori', 'fa fa-suitcase', Direktori::class);
-
 
         yield MenuItem::section('Raznovrsni stilovi');
         yield MenuItem::subMenu('Raznovrsni stilovi', 'fa-solid fa-indent')
