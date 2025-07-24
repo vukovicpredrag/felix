@@ -104,7 +104,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Hero Sekcija Proizvodi', 'fa-solid fa-star', HeroSection::class);
         yield MenuItem::linkToCrud('Proizvodi', 'fa-solid fa-chair', Product::class);
         yield MenuItem::linkToCrud('Garancije', 'fa-solid fa-star',InsuranceBox::class);
-
+        yield MenuItem::section('Produkt kategorije');
+        yield MenuItem::linkToCrud('Kategorije', 'fa-solid fa-note-sticky', Categories::class);
 
 
         yield MenuItem::section('O nama');
@@ -124,23 +125,20 @@ class DashboardController extends AbstractDashboardController
 
 
 
-        yield MenuItem::section('Produkt kategorije');
-        yield MenuItem::linkToCrud('Kategorije', 'fa-solid fa-note-sticky', Categories::class);
-
         yield MenuItem::section('Newsletter');
         yield MenuItem::linkToCrud('Newsletter', 'fa-solid fa-envelope', Newsletter::class);
 
 
 
+        yield MenuItem::section('Promocije');
+        yield MenuItem::linkToCrud('Promocije', 'fa-solid fa-info', Promotions::class);
+        yield MenuItem::section('Newsletter');
+        yield MenuItem::linkToCrud('Newsletter', 'fa-solid fa-envelope', Newsletter::class);
         yield MenuItem::section('SEO');
         yield MenuItem::linkToCrud('SEO podaci', 'fa-solid fa-chart-simple', SEO::class);
 
 
-        yield MenuItem::section('Promocije');
-        yield MenuItem::linkToCrud('Promocije', 'fa-solid fa-info', Promotions::class);
-
-
-
+        
 //        yield MenuItem::section('Upoznaj Hanu');
 //        yield MenuItem::linkToCrud('Upoznaj Hanu', 'fa-solid fa-h', MeetHanna::class);
 
