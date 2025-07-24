@@ -97,29 +97,32 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Blog Pregled', 'fa-solid fa-newspaper', BlogOverview::class);
         yield MenuItem::linkToCrud('Blog', 'fa-solid fa-newspaper', Blog::class);
         yield MenuItem::linkToCrud('Blog Sekcije', 'fa-regular fa-newspaper', BlogSections::class);
-        
 
 
-        yield MenuItem::section('Proizvodi');
-        yield MenuItem::linkToCrud('Proizvodi', 'fa-solid fa-chair', Product::class);
+
+        yield MenuItem::section('ASORTIMAN');
         yield MenuItem::linkToCrud('Hero Sekcija Proizvodi', 'fa-solid fa-star', HeroSection::class);
+        yield MenuItem::linkToCrud('Proizvodi', 'fa-solid fa-chair', Product::class);
         yield MenuItem::linkToCrud('Garancije', 'fa-solid fa-star',InsuranceBox::class);
 
 
 
         yield MenuItem::section('O nama');
+        yield MenuItem::linkToCrud('Hero Sekcija O nama', 'fa-solid fa-star', HeroSectionAboutUs::class);
         yield MenuItem::linkToCrud('Uvod', 'fa-solid fa-info', IntroSection::class);
+
+
+
+
         yield MenuItem::linkToCrud('Naši ciljevi naslov', 'fa-solid fa-info', OurGoalsData::class);
         yield MenuItem::linkToCrud('Naši ciljevi podaci', 'fa-solid fa-info', BelowIntro::class);
-        yield MenuItem::linkToCrud('Hero Sekcija O nama', 'fa-solid fa-star', HeroSectionAboutUs::class);
         yield MenuItem::linkToCrud('Direktori', 'fa fa-suitcase', Direktori::class);
 
 
         yield MenuItem::section('Kontakt');
         yield MenuItem::linkToCrud('Kontakt', 'fa-solid fa-address-book', Contact::class);
 
-        yield MenuItem::section('Futer');
-        yield MenuItem::linkToCrud('Futer', 'fa-solid fa-note-sticky', Footer::class);
+
 
         yield MenuItem::section('Produkt kategorije');
         yield MenuItem::linkToCrud('Kategorije', 'fa-solid fa-note-sticky', Categories::class);
@@ -138,9 +141,11 @@ class DashboardController extends AbstractDashboardController
 
 
 
-        yield MenuItem::section('Upoznaj Hanu');
-        yield MenuItem::linkToCrud('Upoznaj Hanu', 'fa-solid fa-h', MeetHanna::class);
+//        yield MenuItem::section('Upoznaj Hanu');
+//        yield MenuItem::linkToCrud('Upoznaj Hanu', 'fa-solid fa-h', MeetHanna::class);
 
+        yield MenuItem::section('Futer');
+        yield MenuItem::linkToCrud('Futer', 'fa-solid fa-note-sticky', Footer::class);
 
 
     }
