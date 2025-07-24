@@ -134,8 +134,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Promocije', 'fa-solid fa-info', Promotions::class);
         yield MenuItem::section('Newsletter');
         yield MenuItem::linkToCrud('Newsletter', 'fa-solid fa-envelope', Newsletter::class);
-        yield MenuItem::section('SEO');
-        yield MenuItem::linkToCrud('SEO podaci', 'fa-solid fa-chart-simple', SEO::class);
+//        yield MenuItem::section('SEO');
+//        yield MenuItem::linkToCrud('SEO podaci', 'fa-solid fa-chart-simple', SEO::class);
 
 
 

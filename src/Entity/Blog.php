@@ -73,7 +73,10 @@ class Blog
     private ?string $blogIntroParagraph = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['blog:read', 'blog:write'])]
+    private ?string $metaTitle = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
     #[Groups(['blog:read', 'blog:write'])]
     private ?string $metaDescription = null;
 
@@ -218,6 +221,17 @@ class Blog
     public function setMetaDescription(?string $metaDescription): static
     {
         $this->metaDescription = $metaDescription;
+        return $this;
+    }
+
+    public function getMetaTitle(): ?string
+    {
+        return $this->metaTitle;
+    }
+
+    public function setMetaTitle(?string $metaTitle): static
+    {
+        $this->metaTitle = $metaTitle;
         return $this;
     }
 

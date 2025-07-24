@@ -76,6 +76,7 @@ class BlogCrudController extends AbstractCrudController
             TextareaField::new('featuredImageDescription', 'Opis Istaknute Slike'),
             TextEditorField::new('blogIntroParagraph', 'Uvodni Paragraf'),
             ArrayField::new('keywords', 'Ključne reči')->hideOnIndex()->setHelp('Preporučivo da se popuni zbog SEO optimizacije'),
+            TextField::new('metaTitle', 'Meta Title')->hideOnIndex()->setHelp('Preporučivo da se popuni zbog SEO optimizacije'),
             TextField::new('metaDescription', 'Meta Description')->hideOnIndex()->setHelp('Preporučivo da se popuni zbog SEO optimizacije'),
 
         ];
