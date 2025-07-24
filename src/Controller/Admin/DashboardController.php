@@ -104,7 +104,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Hero Sekcija Proizvodi', 'fa-solid fa-star', HeroSection::class);
         yield MenuItem::linkToCrud('Proizvodi', 'fa-solid fa-chair', Product::class);
         yield MenuItem::linkToCrud('Garancije', 'fa-solid fa-star',InsuranceBox::class);
-        yield MenuItem::section('Produkt kategorije');
+        yield MenuItem::section('Proizvodi - kategorije');
         yield MenuItem::linkToCrud('Kategorije', 'fa-solid fa-note-sticky', Categories::class);
 
 
@@ -138,7 +138,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('SEO podaci', 'fa-solid fa-chart-simple', SEO::class);
 
 
-        
+
 //        yield MenuItem::section('Upoznaj Hanu');
 //        yield MenuItem::linkToCrud('Upoznaj Hanu', 'fa-solid fa-h', MeetHanna::class);
 
